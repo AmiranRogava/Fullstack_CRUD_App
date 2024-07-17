@@ -9,6 +9,12 @@ let password = user.password;
 var exercises;
 var currentTask;
 
+var lang_map = {
+    "python":3,
+    "javascript":1,
+    "cpp":2
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     fetch("/auth", {
         method: "POST",
@@ -193,20 +199,18 @@ function taskEnv(taskName, newLanguage = null, choose = null) {
     document.querySelector(".content").innerHTML = ""
 
     document.querySelector(".content").innerHTML += `
-    <div class="controls">
-        <div class="dropdown">
-            <label class="theme">Theme &nbsp; ▼</label>
-            <div class="dropdown-content">
-                <option value="dark">Dark</option>
-                <option value="light">Light</option>
-                <option value="highContrast">High Contrast</option>
-            </div>
+    <div class="select">
+        <div class="selected" data-default="python" data-one="javascript" data-two="cpp" data-three="python">
+            <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" class="arrow">
+                <path
+                    d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z">
+                </path>
+            </svg>
         </div>
-        <div class="dropdown">
-            <label class="plang" for="language">Language &nbsp; ▼</label>
-            <div class="language-content"></div>
+        <div class="options">
+            
         </div>
-    </div>
+    </div>    
 
     <div id="container"></div>
 `;
@@ -216,15 +220,21 @@ function taskEnv(taskName, newLanguage = null, choose = null) {
         currentlang = newLanguage;
     }
 
-    let languages = document.querySelector(".language-content");
+    let languages = document.querySelector(".options");
 
-    languages.innerHTML += `<option value="${currentlang}">${currentlang}</option>`;
+    languages.innerHTML += `  <div title="${currentlang}">
+    <input lang="${currentlang}" checked id="option-${lang_map[currentlang]}" name="option" type="radio" />
+    <label class="option" for="option-${lang_map[currentlang]}" data-txt="${currentlang}"></label>
+</div>`;
 
     for (let lang of currentTask.langs) {
         if (lang == currentlang) {
             continue;
         }
-        languages.innerHTML += `<option value="${lang}">${lang}</option>`;
+        languages.innerHTML += `  <div title="${lang}">
+            <input  lang="${lang}" id="option-${lang_map[lang]}" name="option" type="radio" />
+            <label class="option" for="option-${lang_map[lang]}" data-txt="${lang}"></label>
+    </div>`;
     }
 
 
@@ -252,20 +262,24 @@ ${currentTask.reward}
         });
 
         // Function to change theme
-        document.getElementById('theme').addEventListener('change', function () {
-            var newTheme = this.value;
-            monaco.editor.setTheme(newTheme);
+        // document.getElementById('theme').addEventListener('change', function () {
+        //     var newTheme = this.value;
+        //     monaco.editor.setTheme(newTheme);
 
-        });
+        // });
 
-        // Function to change language
-        document.getElementById('language').addEventListener('change', function () {
-            var newLanguage = this.value;
-            taskEnv(taskName, newLanguage, true)
-            monaco.editor.setModelLanguage(editor.getModel(), newLanguage.toLowerCase());
 
-        });
+        document.querySelectorAll("input").forEach(el=>{
+            el.addEventListener("change",function () {
+                var newLanguage = this.getAttribute("lang")
+              
+                taskEnv(taskName, newLanguage, true)
+                monaco.editor.setModelLanguage(editor.getModel(), newLanguage.toLowerCase());
+    
+            })
+        })
 
+       
 
     });
 

@@ -1,78 +1,100 @@
-.controls {
-  /* position: relative; */
-  display: flex;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
-  padding-top: 10px;
-}
-
-.dropdown {
-  position: relative;
-  margin-right: 20px;
-}
-
-
-.theme, .plang {
-  background-color: #44ff00;
-  color: #212121;
-  padding: 10px 15px;
-  margin: 10px 0;
-  font-size: 15px;
-  font-weight: bold;
-  border: 2px solid transparent;
-  border-radius: 15px;
+.select {
+  width: fit-content;
   cursor: pointer;
-}
-
-.dropdown-content, .language-content {
-  display: none;
-  font-size: 13px;
   position: absolute;
-  z-index: 1;
-  min-width: 200px;
-  background-color: #212121;
-  border: 2px solid #44ff00;
-  border-radius: 0 15px 15px 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-  margin-top: 10px;
+  transition: 300ms;
+  color: white;
+  overflow: hidden;
+  height: fit-content;
+  z-index: 2;
+
 }
 
-.dropdown-content option, .language-content option {
-  color: #44ff00;
-  padding: 8px 10px;
-  text-decoration: none;
-  display: block;
-  transition: 0.1s;
+.selected {
+  background-color: #2a2f3b;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 100000;
   font-size: 15px;
-  font-weight: semibold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.dropdown-content option:hover, .language-content option:hover {
-  background-color: #44ff00;
-  color: #212121;
+.arrow {
+  position: relative;
+  right: 0px;
+  height: 10px;
+  transform: rotate(-90deg);
+  width: 25px;
+  fill: white;
+  z-index: 100000;
+  transition: 300ms;
 }
 
-.dropdown-content option:focus, .language-content option:focus {
-  background-color: #212121;
-  color: #44ff00;
+.options {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #2a2f3b;
+  position: relative;
+  top: -100px;
+  opacity: 0;
+  transition: 300ms;
 }
 
-.dropdown-content option:nth-child(1):hover, .language-content option:nth-child(1):hover {
-  border-radius: 0px 13px 0px 0px;
+.select:hover > .options {
+  opacity: 1;
+  top: 0;
 }
 
-.dropdown-content option:nth-last-child(1):hover, .language-content option:nth-last-child(1):hover {
-  border-radius: 0px 0px 13px 13px;
+.select:hover > .selected .arrow {
+  transform: rotate(0deg);
 }
 
-.dropdown:hover .dropdown-content, .dropdown:hover .language-content {
-  display: block;
+.option {
+  border-radius: 5px;
+  padding: 5px;
+  transition: 300ms;
+  background-color: #2a2f3b;
+  width: 150px;
+  font-size: 15px;
+}
+.option:hover {
+  background-color: #323741;
 }
 
-.theme:hover, .plang:hover {
-  border-radius: 15px 15px 0 0;
+.options input[type="radio"] {
+  display: none;
 }
 
-.dropdown:hover .theme, .dropdown:hover .plang {
-  border-radius: 15px 15px 0 0;
+.options label {
+  display: inline-block;
+}
+.options label::before {
+  content: attr(data-txt);
+}
+
+.options input[type="radio"]:checked + label {
+  display: none;
+}
+
+.options input[type="radio"]#all:checked + label {
+  display: none;
+}
+
+.select:has(.options input[type="radio"]#all:checked) .selected::before {
+  content: attr(data-default);
+}
+.select:has(.options input[type="radio"]#option-1:checked) .selected::before {
+  content: attr(data-one);
+}
+.select:has(.options input[type="radio"]#option-2:checked) .selected::before {
+  content: attr(data-two);
+}
+.select:has(.options input[type="radio"]#option-3:checked) .selected::before {
+  content: attr(data-three);
 }

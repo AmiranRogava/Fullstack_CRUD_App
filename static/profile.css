@@ -30,6 +30,7 @@ header{
     margin: 0 auto;
 
     width: 1300px;
+    padding-top: 40px;
 }
 .content{
     width: 1000px;
@@ -37,7 +38,9 @@ header{
     background-color: rgba(0, 0, 0, 0.51);    
     border-radius: 25px;
     padding: 20px;
+
 }
+
 
 .profile{
    width: 300px;    
@@ -138,4 +141,7 @@ header{
     border-radius: 10px !important;
     border: none;
     --vscode-focusBorder: #110c15 !important;
+    margin-top: 20px;
+    z-index: 1;
+    position: relative;
 }
