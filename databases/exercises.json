@@ -1,0 +1,74 @@
+{
+    "exercises": [
+        {
+            "langs": ["python","javascript"],
+            "name": "summing 1",
+            "reward": 1,
+            "desc": "write sum of two numbers function ab(1,2)->3",
+            "tests":{
+                "ab(3,4)":7,
+                "ab(3,1)":4
+            }
+        },
+         {
+            "langs": ["python","cpp"],
+            "name": "summing 2",
+            "reward": 1,
+            "desc": "write sum of two numbers function ab(1,2)->3",
+            "tests":{
+                "ab(3,4)":7,
+                "ab(3,1)":4
+            }
+        }
+        ,
+         {
+            "langs": ["python","javascript"],
+            "name": "summing 3 ",
+            "reward": 1,
+            "desc": "write sum of two numbers function ab(1,2)->3",
+            "tests":{
+                "ab(3,4)":7,
+                "ab(3,1)":4
+            }
+        },
+        {
+           "langs": ["python","javascript"],
+           "name": "summing 4",
+           "reward": 1,
+           "desc": "write sum of two numbers function ab(1,2)->3",
+           "tests":{
+               "ab(3,4)":7,
+               "ab(3,1)":4
+           }
+       },
+       {
+          "langs": ["python","javascript"],
+          "name": "summing 5",
+          "reward": 1,
+          "desc": "write sum of two numbers function ab(1,2)->3",
+          "tests":{
+              "ab(3,4)":7,
+              "ab(3,1)":4
+          }
+      },
+      {
+         "langs": ["python","javascript"],
+         "name": "summing 6 ",
+         "reward": 1,
+         "desc": "write sum of two numbers function ab(1,2)->3",
+         "tests":{
+             "ab(3,4)":7,
+             "ab(3,1)":4
+         }
+     }
+
+    ],
+    "levels": {
+        "beginner": 13,
+        "junior": 50,
+        "master": 100
+    },
+    "top10":{
+        "username":"points"
+    }
+}

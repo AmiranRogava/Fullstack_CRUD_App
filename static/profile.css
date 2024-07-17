@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: #23182c;
+    font-family: "IBM Plex Sans", Roboto, system-ui, sans-serif;
+    padding: 0px 30px;
+
+}
+
+
+header{
+    width: 1300px;
+    height: fit-content;
+    background-color: rgba(0, 0, 0, 0.51);    
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px ;
+    border-radius: 25px;
+}
+.container{
+    display: flex;
+    height: fit-content;
+    gap: 50px;
+    margin: 0 auto;
+
+    width: 1300px;
+}
+.content{
+    width: 1000px;
+    height: 700px;
+    background-color: rgba(0, 0, 0, 0.51);    
+    border-radius: 25px;
+    padding: 20px;
+}
+
+.profile{
+   width: 300px;    
+    background-color: rgba(0, 0, 0, 0.51);    
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 60px 30px;
+    margin: 0px auto;  
+
+    align-items: center;
+    
+    
+}
+.profile img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+}
+.profile h2{
+    font-size: 30px;
+    line-height: 35.6px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-top: 32px;
+    margin-bottom: 32px;
+}
+.profile > div{
+    display: flex;
+    flex-direction: column;
+}
+.profile > div > p{
+    display: block;
+    text-transform: capitalize;
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    color: #ededed;
+    margin-top: 10px;
+    letter-spacing: 0.24px;
+    text-align: center;
+}
+
+.profile form {
+    width: 100%; 
+}
+
+.profile form label {
+    display: block;
+    font-size: 14px;
+    color: #ededed;
+    margin-bottom: 6px;
+}
+
+.profile form input,
+.profile form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 2px solid #2c2c2e;
+    background-color: #212121;
+    color: #ededed;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 16px;
+}
+
+.profile form textarea {
+    resize: vertical;
+    min-height: 100px;
+    max-height: 200px;
+}
+
+.profile form button[type="submit"] {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.tasks{
+    display: grid;
+    gap: 20px;
+    flex-direction: column;
+    overflow-y: auto;
+    height: 100%;
+    padding-right: 10px;
+}
+
+#container {
+    height: 500px;
+    width: 100%;
+   
+}
+.monaco-editor,#container,.monaco-editor > div{
+    padding: 10px 0;
+    border-radius: 10px !important;
+    border: none;
+    --vscode-focusBorder: #110c15 !important;
+}

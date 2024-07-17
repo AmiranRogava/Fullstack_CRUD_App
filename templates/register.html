@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+
+<div class="register">
+    <img src="{{ url_for('static', filename='src/node.png') }}" alt="Hosting">
+    <h2>Register</h2>
+    <div>
+        <div>
+            <label for="email">email</label>
+            <input type="text" id="email">
+        </div>
+        <div>
+            <label for="username">username</label>
+            <input type="text" id="username">
+        </div>
+        <div>
+            <label for="first_name">first name</label>
+            <input type="text" id="first_name">
+        </div>
+        <div>
+            <label for="last_name">last name</label>
+            <input type="text" id="last_name">
+        </div>
+        <div>
+            <label for="password">password</label>
+            <input type="password" id="password">
+        </div>
+    </div>
+    <p class="res"></p>
+    <button class="reg">register</button>
+    <a href="/">already have an account?</a>
+</div>
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+{% endblock %}

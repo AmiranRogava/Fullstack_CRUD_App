@@ -1,0 +1,78 @@
+.controls {
+  /* position: relative; */
+  display: flex;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+  padding-top: 10px;
+}
+
+.dropdown {
+  position: relative;
+  margin-right: 20px;
+}
+
+
+.theme, .plang {
+  background-color: #44ff00;
+  color: #212121;
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.dropdown-content, .language-content {
+  display: none;
+  font-size: 13px;
+  position: absolute;
+  z-index: 1;
+  min-width: 200px;
+  background-color: #212121;
+  border: 2px solid #44ff00;
+  border-radius: 0 15px 15px 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  margin-top: 10px;
+}
+
+.dropdown-content option, .language-content option {
+  color: #44ff00;
+  padding: 8px 10px;
+  text-decoration: none;
+  display: block;
+  transition: 0.1s;
+  font-size: 15px;
+  font-weight: semibold;
+}
+
+.dropdown-content option:hover, .language-content option:hover {
+  background-color: #44ff00;
+  color: #212121;
+}
+
+.dropdown-content option:focus, .language-content option:focus {
+  background-color: #212121;
+  color: #44ff00;
+}
+
+.dropdown-content option:nth-child(1):hover, .language-content option:nth-child(1):hover {
+  border-radius: 0px 13px 0px 0px;
+}
+
+.dropdown-content option:nth-last-child(1):hover, .language-content option:nth-last-child(1):hover {
+  border-radius: 0px 0px 13px 13px;
+}
+
+.dropdown:hover .dropdown-content, .dropdown:hover .language-content {
+  display: block;
+}
+
+.theme:hover, .plang:hover {
+  border-radius: 15px 15px 0 0;
+}
+
+.dropdown:hover .theme, .dropdown:hover .plang {
+  border-radius: 15px 15px 0 0;
+}
