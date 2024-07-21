@@ -11,7 +11,7 @@
 }
 
 .selected {
-  background-color: #2a2f3b;
+  background-color: #333333;
   padding: 5px;
   margin-bottom: 3px;
   border-radius: 5px;
@@ -39,7 +39,7 @@
   flex-direction: column;
   border-radius: 5px;
   padding: 5px;
-  background-color: #2a2f3b;
+  background-color: #333333;
   position: relative;
   top: -100px;
   opacity: 0;
@@ -59,12 +59,12 @@
   border-radius: 5px;
   padding: 5px;
   transition: 300ms;
-  background-color: #2a2f3b;
+  background-color: #333333;
   width: 150px;
   font-size: 15px;
 }
 .option:hover {
-  background-color: #323741;
+  background-color: #4d4d4f;
 }
 
 .options input[type="radio"] {
