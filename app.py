@@ -69,8 +69,6 @@ def get_tasks():
 def handle_update_profile():
     data = request.get_json()
     username = data.get('username')
-    if not username:
-        return jsonify({"msg": "User not logged in"}), 401
     
     return update_profile(username, data)
 
