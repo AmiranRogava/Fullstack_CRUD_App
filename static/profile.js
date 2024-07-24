@@ -3,6 +3,8 @@ if (!user) {
     window.location.href = "/";
 }
 
+
+
 const { usernameOrEmail, password } = user;
 
 const langMap = {
@@ -19,17 +21,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         body: JSON.stringify({ username_or_email: usernameOrEmail, password })
     })
-    .then(res => {
-        if (!res.ok) throw new Error('Login failed');
-        return res.json();
-    })
-    .then(data => {
-        const profile = document.querySelector(".profile");
-        profile.innerHTML = '';
+        .then(res => {
+            if (!res.ok) throw new Error('Login failed');
+            return res.json();
+        })
+        .then(data => {
+            const profile = document.querySelector(".profile");
+            profile.innerHTML = '';
 
-        if (data?.success) {
-            const user = data.data;
-            profile.innerHTML = `
+            if (data?.success) {
+                const user = data.data;
+                profile.innerHTML = `
                 <img src="${user.img}" alt="Profile Picture">
                 <h2>${user.first_name}</h2>
                 <div>
@@ -45,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button onclick="logout()" type="button" class="ui-btn">Log Out</button>
             `;
 
-            profile.querySelector('.edit').addEventListener('click', () => {
-                const editForm = `
+                profile.querySelector('.edit').addEventListener('click', () => {
+                    const editForm = `
                     <form id="editForm">
                         <label for="img">Image:</label>
                         <input type="text" id="img" value="${user.img || ''}">
@@ -67,48 +69,49 @@ document.addEventListener('DOMContentLoaded', () => {
                     </form>
                 `;
 
-                profile.innerHTML = editForm;
+                    profile.innerHTML = editForm;
 
-                profile.querySelector('button[type="submit"]').addEventListener('click', event => {
-                    event.preventDefault();
+                    profile.querySelector('button[type="submit"]').addEventListener('click', event => {
+                        event.preventDefault();
 
-                    const updatedProfile = {
-                        location: document.getElementById('location').value,
-                        img: document.getElementById('img').value,
-                        phone: document.getElementById('phone').value,
-                        age: document.getElementById('age').value,
-                        bio: document.getElementById('bio').value
-                    };
+                        const updatedProfile = {
+                            location: document.getElementById('location').value,
+                            img: document.getElementById('img').value,
+                            phone: document.getElementById('phone').value,
+                            age: document.getElementById('age').value,
+                            bio: document.getElementById('bio').value
+                        };
 
-                    fetch("/update_profile", {
-                        method: "POST",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(updatedProfile)
-                    })
-                    .then(res => {
-                        if (!res.ok) throw new Error('Failed to update profile');
-                        return res.json();
-                    })
-                    .then(data => {
-                        console.log(data.msg);
-                        window.location.href = '/profile';
-                    })
-                    .catch(error => console.error('Error updating profile:', error));
+                        fetch("/update_profile", {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json"
+                            },
+                            body: JSON.stringify(updatedProfile)
+                        })
+                            .then(res => {
+                                if (!res.ok) throw new Error('Failed to update profile');
+                                return res.json();
+                            })
+                            .then(data => {
+                                console.log(data.msg);
+                                window.location.href = '/profile';
+                            })
+                            .catch(error => console.error('Error updating profile:', error));
+                    });
                 });
-            });
-        } else {
-            profile.innerHTML = '<p>User not found</p>';
-        }
-    })
-    .catch(error => {
-        console.error('Error fetching or parsing user data:', error);
-        document.querySelector(".profile").innerHTML = '<p>Error loading profile</p>';
-    });
+            } else {
+                profile.innerHTML = '<p>User not found</p>';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching or parsing user data:', error);
+            document.querySelector(".profile").innerHTML = '<p>Error loading profile</p>';
+        });
 });
 
 function fetchTasks(language = "python") {
+
     const tasks = document.querySelector(".tasks");
     fetch("/exercises", {
         method: "POST",
@@ -117,15 +120,15 @@ function fetchTasks(language = "python") {
         },
         body: JSON.stringify({ email: usernameOrEmail, password, lang: language })
     })
-    .then(res => {
-        if (!res.ok) throw new Error('Failed to fetch tasks');
-        return res.json();
-    })
-    .then(data => {
-        tasks.innerHTML = "";
-        exercises = data.msg;
-        tasks.innerHTML = exercises.map(task => `
-            <div class="notification task" onclick="taskEnv('${task.name}')">
+        .then(res => {
+            if (!res.ok) throw new Error('Failed to fetch tasks');
+            return res.json();
+        })
+        .then(data => {
+            tasks.innerHTML = "";
+            exercises = data.msg;
+            tasks.innerHTML = exercises.map(task => `
+            <div class="notification task" onclick="taskEnv('${task.name}','${language}')">
                 <div class="notiglow"></div>
                 <div class="notiborderglow"></div>
                 <div class="notititle">${task.name}</div>
@@ -133,8 +136,8 @@ function fetchTasks(language = "python") {
                 <div class="notibody">points: ${task.reward}</div>
             </div>
         `).join('');
-    })
-    .catch(error => console.error('Error fetching tasks:', error));
+        })
+        .catch(error => console.error('Error fetching tasks:', error));
 }
 
 function taskEnv(taskName, newLanguage = null, choose = null) {
@@ -144,7 +147,7 @@ function taskEnv(taskName, newLanguage = null, choose = null) {
 
     const optionsHtml = currentTask.langs.map(lang => `
         <div title="${lang}">
-            <input lang="${lang}" id="option-${langMap[lang]}" name="option" type="radio" ${lang === (newLanguage || currentTask.langs[0]) ? 'checked' : ''} />
+            <input lang="${lang}" id="option-${langMap[lang]}" name="option" type="radio" ${lang === (newLanguage || language) ? 'checked' : ''} />
             <label class="option" for="option-${langMap[lang]}" data-txt="${lang}"></label>
         </div>
     `).join('');
@@ -158,17 +161,20 @@ function taskEnv(taskName, newLanguage = null, choose = null) {
             </div>
             <div class="options">${optionsHtml}</div>
         </div>    
-        <div id="container"></div>
+        <div id="container">
+        </div>
+
+        <div class="output"></div>
     `;
 
     require(['vs/editor/editor.main'], function () {
         const editor = monaco.editor.create(document.getElementById('container'), {
             value: getComment(currentTask, newLanguage),
-            language: newLanguage || currentTask.langs[0],
+            language: newLanguage || language,
             theme: 'vs-dark'
         });
 
-        document.querySelectorAll("input[name='option']").forEach(el => {
+        document.querySelectorAll(".content input[name='option']").forEach(el => {
             el.addEventListener("change", function () {
                 const newLanguage = this.getAttribute("lang");
                 taskEnv(taskName, newLanguage, true);
@@ -203,6 +209,7 @@ function langChange() {
     document.querySelectorAll('input[name="value-radio"]').forEach(radioButton => {
         radioButton.addEventListener('change', function () {
             const langName = document.querySelector(`label[for="${this.id}"]`).textContent;
+
             fetchTasks(langName.toLowerCase());
         });
     });

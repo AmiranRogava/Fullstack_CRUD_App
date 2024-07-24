@@ -37,6 +37,7 @@ header{
     background-color: rgba(0, 0, 0, 0.51);    
     border-radius: 25px;
     padding: 20px;
+    position: relative;
 
 }
 
@@ -133,14 +134,31 @@ header{
 #container {
     height: 500px;
     width: 100%;
-   
+
 }
 .monaco-editor,#container,.monaco-editor > div{
-    padding: 10px 0;
     border-radius: 10px !important;
     border: none;
     --vscode-focusBorder: #110c15 !important;
-    margin-top: 20px;
+  
     z-index: 1;
     position: relative;
+}
+
+div#container {
+    background-color:  #1e1e1e;
+    padding-top: 20px;
+    margin-top: 50px;
+}
+
+
+.output{
+    height: 100px;
+    width: 920px;
+    background-color: #1e1e1e;
+    z-index: 2;
+    position: absolute;
+    border-top: 2px solid #00000040;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
