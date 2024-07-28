@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <br>
                         <button type="submit" class="ui-btn">Save</button>
                     </form>
+                    
                 `;
 
                     profile.innerHTML = editForm;
@@ -135,6 +136,7 @@ function fetchTasks(language = "python") {
                 <div class="notibody">${task.desc}</div>
                 <div class="notibody">points: ${task.reward}</div>
             </div>
+            
         `).join('');
         })
         .catch(error => console.error('Error fetching tasks:', error));
@@ -161,11 +163,16 @@ function taskEnv(taskName, newLanguage = null, choose = null) {
             </div>
             <div class="options">${optionsHtml}</div>
         </div>    
+        <button class="run-button" onclick="check_code()">Run > </button>
+        <button class="sub-button" onclick="submit()">submit > </button>
         <div id="container">
         </div>
 
-        <div class="output"></div>
+     <div class="output">
+        <p class="deffault"><span>===</span> output here <span>===</span></p>
+     </div>
     `;
+
 
     require(['vs/editor/editor.main'], function () {
         const editor = monaco.editor.create(document.getElementById('container'), {
@@ -187,12 +194,14 @@ function taskEnv(taskName, newLanguage = null, choose = null) {
 function getComment(task, lang) {
     if (lang === "python") {
         return `"""
+DON'T REMOVE COMMENTS!
 ${task.name}
 ${task.desc}
 ${task.reward}
 """`;
     } else {
         return `/*
+DON'T REMOVE COMMENTS!
 ${task.name}
 ${task.desc}
 ${task.reward}
@@ -222,3 +231,74 @@ function langChange() {
 
 langChange();
 fetchTasks();
+
+
+
+function check_code() {
+    const lines = document.querySelectorAll(".view-line");
+
+    // Filter out lines that contain the word 'print' and join the remaining lines with newline characters
+    let codes = Array.from(lines)
+        .map(line => line.textContent)
+        .filter(text => !text.includes('print'))
+        .join("\n");
+
+    console.log(codes.split('"""')[2].replace(" ", ""))
+    var fails = 0
+
+    const parts = codes.split('"""');
+    const thirdPart = parts[2].trim();
+    const containsNumbersOrLetters = /[a-zA-Z0-9]/.test(thirdPart);
+
+    if (!containsNumbersOrLetters) {
+        codes = "<deffault>"
+        fails += 1
+    }
+    
+    fetch("/check", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ code: codes, tests: currentTask.tests })
+    })
+        .then(res => {
+            if (!res.ok) throw new Error('Login failed');
+            return res.json();
+        })
+        .then(data => {
+            
+            let container = document.querySelector(".output")
+            container.classList.add("hidden")
+            container.innerHTML = ""
+            Object.keys(data).forEach(key => {
+                const p = document.createElement('p');
+                if (data[key].includes("Error")) {
+                    data[key] = data[key].split('line ')[1].slice(3,)
+                    
+                }
+                p.innerHTML = `<span>${key}</span> <span>${data[key]}</span>`;
+
+                if (data[key].includes("Error")) {
+                    p.classList.add('fail');
+                    fails += 1
+                } else {
+                    p.classList.add('success');
+                }
+
+                container.appendChild(p);
+            });
+            if (fails == 0){
+                document.querySelector(".sub-button").style.opacity = 1
+                fails = 0
+            }
+            
+            
+            setTimeout(()=>{
+             container.classList.remove("hidden")
+            }, 1000)
+
+
+        })
+}
+

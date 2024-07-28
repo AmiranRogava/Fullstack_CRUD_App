@@ -4,10 +4,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "IBM Plex Sans", Roboto, system-ui, sans-serif;
 }
 body{
     background-color: #23182c;
-    font-family: "IBM Plex Sans", Roboto, system-ui, sans-serif;
+    
     padding: 0px 30px;
 
 }
@@ -161,4 +162,68 @@ div#container {
     border-top: 2px solid #00000040;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    padding: 20px;
+}
+.output.hidden p{
+    display: none;
+}
+.output p{
+    display: flex;
+    gap: 30px;
+}
+.output span {
+    color: #44ff00;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.output p.deffault{
+    color: #c300ff;
+}
+.output p.success span:nth-child(2) {
+    color: #c300ff;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.output p.fail span:nth-child(2) {
+    color: #ff4600;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+.run-button,.sub-button{
+    background-color: #2c2c2e;
+    border: none;
+    color: rgb(68, 255, 0);
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    padding: 5px 30px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    border-radius: 5px;
+    margin: 4px 2px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.sub-button{
+    background-color: #c300ff; /* Purple color */
+    color: white;
+
+    right: 130px;
+    opacity: 0.4;
+  
+
+}
+.sub-button:hover{
+background-color:#7c02a2;
+}
+
+.run-button:hover {
+    background-color: #353536;
+
+  
 }

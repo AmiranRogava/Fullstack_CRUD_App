@@ -3,6 +3,7 @@ import json, os
 from registration import isRegistered, addUser
 from decorators import validate_form,authorize
 from update_profile import update_profile
+import checker
 
 app = Flask(__name__)
 
@@ -64,6 +65,24 @@ def get_tasks():
             return jsonify({"msg":tasks})
     return jsonify({"msg": "there is no tasks"})
 
+@app.route("/check", methods=["POST"])
+def answer_checker():
+    data = request.get_json()
+    code = data.get("code").replace(" ", " ")
+
+    with open("tempcode.py", "w") as f: 
+        f.write("")
+    try:
+        with open("tempcode.py", "w", encoding="utf8") as f:
+            f.write(code)
+    except:
+        pass
+    if "<deffault>" in code:
+        return jsonify({"⚠️⚠️ You are": " Lazy    🖕🖕"})
+    res = checker.check(data.get("tests"))
+
+    return jsonify(res)
+    
 
 @app.route('/update_profile', methods=["POST"])
 def handle_update_profile():
