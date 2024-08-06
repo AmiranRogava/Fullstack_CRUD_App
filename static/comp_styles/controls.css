@@ -1,0 +1,89 @@
+.lang-selector .select {
+  width: fit-content;
+  cursor: pointer;
+  position: absolute;
+  transition: 300ms;
+  color: white;
+  overflow: hidden;
+  height: fit-content;
+  z-index: 2;
+
+}
+.lang-selector .selected {
+  background-color: #333333;
+  padding: 5px;
+  margin-bottom: 3px;
+  border-radius: 5px;
+  position: relative;
+  z-index: 100000;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.lang-selector .arrow {
+  position: relative;
+  right: 0px;
+  height: 10px;
+  transform: rotate(-90deg);
+  width: 25px;
+  fill: white;
+  z-index: 100000;
+  transition: 300ms;
+}
+.lang-selector .options {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #333333;
+  position: relative;
+  top: -100px;
+  opacity: 0;
+  transition: 300ms;
+}
+.lang-selector .select:hover>.options {
+  opacity: 1;
+  top: 0;
+}
+.lang-selector .select:hover>.selected .arrow {
+  transform: rotate(0deg);
+}
+.lang-selector .option {
+  border-radius: 5px;
+  padding: 5px;
+  transition: 300ms;
+  background-color: #333333;
+  width: 150px;
+  font-size: 15px;
+}
+.lang-selector .option:hover {
+  background-color: #4d4d4f;
+}
+.lang-selector .options input[type="checkbox"] {
+  display: none;
+}
+.lang-selector .options label {
+  display: inline-block;
+}
+.lang-selector .options label::before {
+  content: attr(data-txt);
+}
+.lang-selector .options input[type="checkbox"]:checked+label {
+  display: none;
+}
+.lang-selector .options input[type="checkbox"]#all:checked+label {
+  display: none;
+}
+.lang-selector .select:has(.options input[type="checkbox"]#all:checked) .selected::before {
+  content: attr(data-default);
+}
+.lang-selector .select:has(.options input[type="checkbox"]#option-1:checked) .selected::before {
+  content: attr(data-one);
+}
+.lang-selector .select:has(.options input[type="checkbox"]#option-2:checked) .selected::before {
+  content: attr(data-two);
+}
+.lang-selector .select:has(.options input[type="checkbox"]#option-3:checked) .selected::before {
+  content: attr(data-three);
+}

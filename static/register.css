@@ -1,0 +1,110 @@
+.register{
+    width: 460px;    
+    background-color: rgba(0, 0, 0, 0.51);    
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    padding: 60px 30px;
+    margin: 0px auto;  
+    margin-top: 50px;  
+
+}
+.register h2{
+    font-size: 30px;
+    line-height: 35.6px;
+    text-align: center;
+    color: #fff;
+    font-weight: 500;
+    padding-left: 16px;
+    padding-right: 16px;
+    margin-bottom: 32px;
+}
+.register > div{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.register > div > div{
+    display: flex;
+    flex-direction: column;
+}
+.register > div > div > label{
+    display: block;
+    line-height: 16px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #ededed;
+    margin-bottom: 8px;
+    letter-spacing: 0.24px;
+}
+.register > div > div > input{
+    height: 44px;
+    padding: 12px;
+    background-color: #212121;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+}
+
+.register > div > div > input:focus {
+    background-color: #e8f0ff;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+.register button{
+    font-size:14px;
+    line-height: 20px;
+    color: #eff6ff;
+    background-color: #212121;
+    padding: 16px;
+    border: 2px solid #2c2c2e;
+    border-radius: 8px;
+    text-transform: uppercase;
+    margin-top: 24px;
+    transition: 0.6s;
+
+}
+.register button:active{
+    background-color: #eff6ff;
+    color: #212121;
+
+}
+.register > a{
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 24px;
+
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+}
+
+.res.success{
+    font-size:14px;
+    line-height: 20px;
+    color: #eff6ff;
+    background-color: #60eb04;
+    padding: 16px;
+    border: 2px solid #2c2c2e;
+    border-radius: 8px;
+    text-transform: uppercase;
+    margin-top: 24px;
+}
+
+
+.res.err{
+    font-size:14px;
+    line-height: 20px;
+    color: #eff6ff;
+    background-color: #da0808;
+    padding: 16px;
+    border: 2px solid #2c2c2e;
+    border-radius: 8px;
+    text-transform: uppercase;
+    margin-top: 24px;
+}
