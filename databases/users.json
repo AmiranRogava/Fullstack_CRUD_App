@@ -6,11 +6,14 @@
         "email": "gelagoga@gmail.com",
         "img": "https://wallpapers-clan.com/wp-content/uploads/2023/05/cool-pfp-02.jpg",
         "password": "gela",
-        "points": 2,
+        "points": 1,
         "finished_tasks": [
-            "summing 3 ",
-            "summing 5"
-        ]
+            "summing 1"
+        ],
+        "location": "",
+        "phone": "",
+        "age": "",
+        "bio": ""
     },
     {
         "username": "gela_666",

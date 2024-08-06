@@ -238,3 +238,48 @@ background-color:#7c02a2;
 .theme-selector .select{
     left:200px;
 }
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px rgba(68, 255, 0, 0.5), 0 0 10px rgba(68, 255, 0, 0.5), 0 0 15px rgba(68, 255, 0, 0.5), 0 0 20px rgba(68, 255, 0, 0.5);
+        font-size: 13px;
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(68, 255, 0, 0.7), 0 0 20px rgba(68, 255, 0, 0.7), 0 0 30px rgba(68, 255, 0, 0.7), 0 0 40px rgba(68, 255, 0, 0.7);
+     
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(68, 255, 0, 0.5), 0 0 10px rgba(68, 255, 0, 0.5), 0 0 15px rgba(68, 255, 0, 0.5), 0 0 20px rgba(68, 255, 0, 0.5);
+        font-size: 15px;
+    }
+}
+
+.allPoints {
+    font-size: 13px;
+    color: rgb(68, 255, 0) !important;
+    animation: glow 2s  alternate;
+}
+
+.done::after{
+    --gradient: linear-gradient(to bottom, #ff4600, #ff7500, #ff9b00);
+
+}
+.done .notititle{
+    color: #ff7500;
+
+}
+.notibody span{
+    margin-top:20px;
+    color: #ff7500;
+
+    text-transform: capitalize;
+
+    display: block;
+}
+    .notibody i{
+    font-style: normal;
+    text-transform: capitalize;
+    margin-top: 20px;
+    display: block;
+    color: rgb(68, 255, 0) !important;
+}

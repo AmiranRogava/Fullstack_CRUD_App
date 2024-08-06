@@ -79,7 +79,7 @@ def answer_checker():
     except:
         pass
     if "<deffault>" in code:
-        return jsonify({"⚠️⚠️ You are": " Lazy    🖕🖕"})
+        return jsonify({"⚠️⚠️ You are": " Lazy    ⚠️⚠️"})
     res = checker.check(data.get("tests"))
 
     return jsonify(res)

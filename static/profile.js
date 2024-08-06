@@ -1,65 +1,71 @@
 let user = JSON.parse(localStorage.getItem("user"));
+
 if (!user) {
-    window.location.href = "/";
+  window.location.href = "/";
 }
-
-
 
 const { usernameOrEmail, password } = user;
 
 const langMap = {
-    "python": 3,
-    "javascript": 1,
-    "cpp": 2
+  python: 3,
+  javascript: 1,
+  cpp: 2,
 };
-var currentTheme = "vs-dark"
+var finished_tasks = []
+var currentTheme = "vs-dark";
 var themes = [
-    "vs-dark",
-    "Dracula",
-    "Monokai",
-    "Solarized-dark",
-    "Solarized-light",
-    "Night Owl",
-    "Nord",
-    "GitHub Dark",
-    "GitHub Light",
-    "Cobalt",
-    "Tomorrow-Night",
-
+  "vs-dark",
+  "Dracula",
+  "Monokai",
+  "Solarized-dark",
+  "Solarized-light",
+  "Night Owl",
+  "Nord",
+  "GitHub Dark",
+  "GitHub Light",
+  "Cobalt",
+  "Tomorrow-Night",
 ];
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+    auth()
+    langChange();
+    fetchTasks();
+});
 
 
-
-    fetch("/auth", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ username_or_email: usernameOrEmail, password })
+function auth() {
+  fetch("/auth", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username_or_email: usernameOrEmail, password }),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Login failed");
+      return res.json();
     })
-        .then(res => {
-            if (!res.ok) throw new Error('Login failed');
-            return res.json();
-        })
-        .then(data => {
-            const profile = document.querySelector(".profile");
-            profile.innerHTML = '';
+    .then((data) => {
+      const profile = document.querySelector(".profile");
+      profile.innerHTML = "";
 
-            if (data?.success) {
-                const user = data.data;
-                profile.innerHTML = `
+      if (data?.success) {
+        const user = data.data;
+
+        finished_tasks = user.finished_tasks
+        profile.innerHTML = `
                 <img src="${user.img}" alt="Profile Picture">
                 <h2>${user.first_name}</h2>
                 <div>
                     <p>Name: ${user.first_name} ${user.last_name}</p>
+                    <p class="allPoints">Points: ${user.points || "0"}</p>
                     <p>Email: ${user.email}</p>
-                    <p>Location: ${user.location || 'Not specified'}</p>
-                    <p>Phone: ${user.phone || 'Not specified'}</p>
-                    <p>Age: ${user.age || 'Not specified'}</p>
-                    <p>Bio: ${user.bio || 'No bio provided'}</p>
-                    <p>points: ${user.points || '0'}</p>
+                    <p>Location: ${user.location || "Not specified"}</p>
+                    <p>Phone: ${user.phone || "Not specified"}</p>
+                    <p>Age: ${user.age || "Not specified"}</p>
+                    <p>Bio: ${user.bio || "No bio provided"}</p>
+                    
 
                     <br>
                     <button type="button" class="edit ui-btn">Edit Profile</button>
@@ -67,116 +73,140 @@ document.addEventListener('DOMContentLoaded', () => {
                     <button onclick="logout()" type="button" class="ui-btn">Log Out</button>
             `;
 
-                profile.querySelector('.edit').addEventListener('click', () => {
-                    const editForm = `
+        profile.querySelector(".edit").addEventListener("click", () => {
+          const editForm = `
                     <form id="editForm">
                         <label for="img">Image:</label>
-                        <input type="text" id="img" value="${user.img || ''}">
+                        <input type="text" id="img" value="${user.img || ""}">
                         <br>
                         <label for="location">Location:</label>
-                        <input type="text" id="location" value="${user.location || ''}">
+                        <input type="text" id="location" value="${
+                          user.location || ""
+                        }">
                         <br>
                         <label for="phone">Phone:</label>
-                        <input type="text" id="phone" value="${user.phone || ''}">
+                        <input type="text" id="phone" value="${
+                          user.phone || ""
+                        }">
                         <br>
                         <label for="age">Age:</label>
-                        <input type="text" id="age" value="${user.age || ''}">
+                        <input type="text" id="age" value="${user.age || ""}">
                         <br>
                         <label for="bio">Bio:</label>
-                        <textarea id="bio">${user.bio || ''}</textarea>
+                        <textarea id="bio">${user.bio || ""}</textarea>
                         <br>
                         <button type="submit" class="ui-btn">Save</button>
                     </form>
                     
                 `;
 
-                    profile.innerHTML = editForm;
+          profile.innerHTML = editForm;
 
-                    profile.querySelector('button[type="submit"]').addEventListener('click', event => {
-                        event.preventDefault();
+          profile
+            .querySelector('button[type="submit"]')
+            .addEventListener("click", (event) => {
+              event.preventDefault();
 
-                        const updatedProfile = {
-                            username: user.username,
-                            location: document.getElementById('location').value,
-                            img: document.getElementById('img').value,
-                            phone: document.getElementById('phone').value,
-                            age: document.getElementById('age').value,
-                            bio: document.getElementById('bio').value
-                        };
+              const updatedProfile = {
+                username: user.username,
+                location: document.getElementById("location").value,
+                img: document.getElementById("img").value,
+                phone: document.getElementById("phone").value,
+                age: document.getElementById("age").value,
+                bio: document.getElementById("bio").value,
+              };
 
-                        fetch("/update_profile", {
-                            method: "POST",
-                            headers: {
-                                "Content-Type": "application/json"
-                            },
-                            body: JSON.stringify(updatedProfile)
-                        })
-                        .then(res => {
-                            if (!res.ok) throw new Error('Failed to update profile');
-                            return res.json();
-                        })
-                        .then(data => {
-                            console.log(data.msg);
-                            window.location.href = '/profile';
-                        })
-                        .catch(error => console.error('Error updating profile:', error));
-                    });
-                });
-            } else {
-                profile.innerHTML = '<p>User not found</p>';
-            }
-        })
-        .catch(error => {
-            console.error('Error fetching or parsing user data:', error);
-            document.querySelector(".profile").innerHTML = '<p>Error loading profile</p>';
+              fetch("/update_profile", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(updatedProfile),
+              })
+                .then((res) => {
+                  if (!res.ok) throw new Error("Failed to update profile");
+                  return res.json();
+                })
+                .then((data) => {
+                  console.log(data.msg);
+                  window.location.href = "/profile";
+                })
+                .catch((error) =>
+                  console.error("Error updating profile:", error)
+                );
+            });
         });
-});
-
-function fetchTasks(language = "python") {
-
-    const tasks = document.querySelector(".tasks");
-    fetch("/exercises", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email: usernameOrEmail, password, lang: language })
+      } else {
+        profile.innerHTML = "<p>User not found</p>";
+      }
     })
-        .then(res => {
-            if (!res.ok) throw new Error('Failed to fetch tasks');
-            return res.json();
-        })
-        .then(data => {
-            tasks.innerHTML = "";
-            exercises = data.msg;
-            tasks.innerHTML = exercises.map(task => `
-            <div class="notification task" onclick="taskEnv('${task.name}','${language}')">
+    .catch((error) => {
+      console.error("Error fetching or parsing user data:", error);
+      document.querySelector(".profile").innerHTML =
+        "<p>Error loading profile</p>";
+    });
+}
+function fetchTasks(language = "python") {
+  const tasks = document.querySelector(".tasks");
+  fetch("/exercises", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ email: usernameOrEmail, password, lang: language }),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to fetch tasks");
+      return res.json();
+    })
+    .then((data) => {
+      tasks.innerHTML = "";
+      exercises = data.msg;
+      exercises.sort((a, b) => {
+        return finished_tasks.includes(a.name) - finished_tasks.includes(b.name);
+      });
+      
+      tasks.innerHTML = exercises
+        .map(
+          (task) => `
+            <div class="notification ${ finished_tasks.includes(task.name) ? "done" : ""  } task" onclick="taskEnv('${task.name}','${language}')">
                 <div class="notiglow"></div>
                 <div class="notiborderglow"></div>
-                <div class="notititle">${task.name}</div>
+                <div class="notititle">${task.name} </div>
                 <div class="notibody">${task.desc}</div>
-                <div class="notibody">points: ${task.reward}</div>
+                <div class="notibody " > ${ finished_tasks.includes(task.name) ? "<span>Done</span>" : `<i>points: ${task.reward}</i>`  }</div>
             </div>
             
-        `).join('');
-        })
-        .catch(error => console.error('Error fetching tasks:', error));
+        `
+        )
+        .join("");
+    })
+    .catch((error) => console.error("Error fetching tasks:", error));
 }
 
 function taskEnv(taskName, newLanguage = null, choose = null, theme = null) {
+  currentTask = exercises.find((task) => task.name === taskName);
+  if (!choose) document.querySelector(".tasks").remove();
+  document.querySelector(".content").innerHTML = "";
 
-    currentTask = exercises.find(task => task.name === taskName);
-    if (!choose) document.querySelector(".tasks").remove();
-    document.querySelector(".content").innerHTML = '';
-
-    const optionsHtml = currentTask.langs.map(lang => `
+  const optionsHtml = currentTask.langs
+    .map(
+      (lang) => `
         <div title="${lang}">
-            <input lang="${lang}" id="option-${langMap[lang]}" name="option" type="checkbox" ${lang === (newLanguage || language) ? 'checked' : ''} />
-            <label class="option" for="option-${langMap[lang]}" data-txt="${lang}"></label>
+            <input lang="${lang}" id="option-${
+        langMap[lang]
+      }" name="option" type="checkbox" ${
+        lang === (newLanguage || language) ? "checked" : ""
+      } />
+            <label class="option" for="option-${
+              langMap[lang]
+            }" data-txt="${lang}"></label>
         </div>
-    `).join('');
+    `
+    )
+    .join("");
 
-    document.querySelector(".content").innerHTML = `
+  document.querySelector(".content").innerHTML = `
         <div class="lang-selector">
             <div class="select ">
                 <div class="selected" data-default="python" data-one="javascript" data-two="cpp" data-three="python">
@@ -202,136 +232,135 @@ function taskEnv(taskName, newLanguage = null, choose = null, theme = null) {
      </div>
     `;
 
-
-    require(['vs/editor/editor.main'], function () {
-        const editor = monaco.editor.create(document.getElementById('container'), {
-            value: getComment(currentTask, newLanguage),
-            language: newLanguage || language,
-            theme: currentTheme,
-
-        });
-
-
-
-
-        document.querySelectorAll(".lang-selector input[name='option']").forEach(el => {
-            el.addEventListener("change", function () {
-                const newLanguage = this.getAttribute("lang");
-                taskEnv(taskName, newLanguage, true);
-                monaco.editor.setModelLanguage(editor.getModel(), newLanguage.toLowerCase());
-            });
-        });
-
-
-
-        load_theme_selector()
-
-
-
+  require(["vs/editor/editor.main"], function () {
+    const editor = monaco.editor.create(document.getElementById("container"), {
+      value: getComment(currentTask, newLanguage),
+      language: newLanguage || language,
+      theme: currentTheme,
     });
+
+    document
+      .querySelectorAll(".lang-selector input[name='option']")
+      .forEach((el) => {
+        el.addEventListener("change", function () {
+          const newLanguage = this.getAttribute("lang");
+          taskEnv(taskName, newLanguage, true);
+          monaco.editor.setModelLanguage(
+            editor.getModel(),
+            newLanguage.toLowerCase()
+          );
+        });
+      });
+
+    load_theme_selector();
+  });
 }
 
 function getComment(task, lang) {
-    if (lang === "python") {
-        return `"""
+  if (lang === "python") {
+    return `"""
 DO NOT REMOVE COMMENTS!
 ${task.name}
 ${task.desc}
 ${task.reward}
 """`;
-    } else {
-        return `/*
+  } else {
+    return `/*
 DO NOT REMOVE COMMENTS!
 ${task.name}
 ${task.desc}
 ${task.reward}
 */`;
-    }
+  }
 }
 
 function logout() {
-    localStorage.setItem("user", 0);
-    window.location.href = "/";
+  localStorage.setItem("user", 0);
+  window.location.href = "/";
 }
 
 function langChange() {
-    document.querySelectorAll('header input[name="value-radio"]').forEach(radioButton => {
-        radioButton.addEventListener('change', function () {
-            const langName = document.querySelector(` label[for="${this.id}"]`).textContent;
+  document
+    .querySelectorAll('header input[name="value-radio"]')
+    .forEach((radioButton) => {
+      radioButton.addEventListener("change", function () {
+        const langName = document.querySelector(
+          ` label[for="${this.id}"]`
+        ).textContent;
 
-            fetchTasks(langName.toLowerCase());
-        });
+        fetchTasks(langName.toLowerCase());
+      });
     });
 
-    require.config({
-        paths: {
-            'vs': 'https://unpkg.com/monaco-editor@latest/min/vs',
-            'monaco-themes': 'https://unpkg.com/monaco-themes/dist/monaco-themes'
-        },
+  require.config({
+    paths: {
+      "vs": "https://unpkg.com/monaco-editor@latest/min/vs",
+      "monaco-themes": "https://unpkg.com/monaco-themes/dist/monaco-themes",
+    },
 
-
-        waitSeconds: 60
-    });
-
+    waitSeconds: 60,
+  });
 }
 function set_theme(theme) {
-    // https://unpkg.com/browse/monaco-themes@0.4.4/themes/
-    fetch(`https://unpkg.com/monaco-themes@0.4.4/themes/${theme}.json`)
-    .then(response => {
-        if (!response.ok) {
-            throw new Error('Theme not found');
-        }
-        return response.json();
+  // https://unpkg.com/browse/monaco-themes@0.4.4/themes/
+  fetch(`https://unpkg.com/monaco-themes@0.4.4/themes/${theme}.json`)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Theme not found");
+      }
+      return response.json();
     })
-    .then(data => {
-        // Sanitize the theme name to remove illegal characters
-        const sanitizedThemeName = theme.replace(/[^a-zA-Z0-9-_]/g, '');
-        monaco.editor.defineTheme(sanitizedThemeName, data);
-        monaco.editor.setTheme(sanitizedThemeName);
-        console.log(`Theme applied: ${sanitizedThemeName}`);
+    .then((data) => {
+      // Sanitize the theme name to remove illegal characters
+      const sanitizedThemeName = theme.replace(/[^a-zA-Z0-9-_]/g, "");
+      monaco.editor.defineTheme(sanitizedThemeName, data);
+      monaco.editor.setTheme(sanitizedThemeName);
+      console.log(`Theme applied: ${sanitizedThemeName}`);
     })
-    .catch(error => {
-        console.error('Error loading theme:', error);
-        monaco.editor.setTheme('vs-dark'); // Fallback to a default theme
+    .catch((error) => {
+      console.error("Error loading theme:", error);
+      monaco.editor.setTheme("vs-dark"); // Fallback to a default theme
     });
 
+  document.querySelector("#container").style.opacity = 0;
+  document.querySelector(".output").style.opacity = 0;
 
-    document.querySelector("#container").style.opacity = 0
-    document.querySelector(".output").style.opacity = 0
+  setTimeout(() => {
+    const editorElement = document.querySelector(".monaco-editor");
 
-    setTimeout(() => {
-        const editorElement = document
-            .querySelector('.monaco-editor');
+    // Get the computed styles of the element
+    const computedStyles = getComputedStyle(editorElement);
 
-        // Get the computed styles of the element
-        const computedStyles = getComputedStyle(editorElement);
+    // Retrieve the value of the CSS variable
+    const backgroundColor = computedStyles
+      .getPropertyValue("--vscode-editor-background")
+      .trim();
+    document.querySelector("#container").style.backgroundColor =
+      backgroundColor;
+    document.querySelector(".output").style.backgroundColor = backgroundColor;
 
-        // Retrieve the value of the CSS variable
-        const backgroundColor = computedStyles.getPropertyValue('--vscode-editor-background').trim();
-        document.querySelector("#container").style.backgroundColor = backgroundColor
-        document.querySelector(".output").style.backgroundColor = backgroundColor
-
-
-        document.querySelector("#container").style.opacity = 1
-        document.querySelector(".output").style.opacity = 1
-    }, 200);
-
-
-
+    document.querySelector("#container").style.opacity = 1;
+    document.querySelector(".output").style.opacity = 1;
+  }, 400);
 }
 
 function load_theme_selector(theme = "vs-dark") {
-    document.querySelector(".theme-selector").innerHTML = ""
-    currentTheme = theme
-    const optionsHtml = themes.map((theme, index) => `
+  document.querySelector(".theme-selector").innerHTML = "";
+  currentTheme = theme;
+  const optionsHtml = themes
+    .map(
+      (theme, index) => `
     <div title="${theme}">
-        <input theme="${theme}" id="opt${index}" name="option" type="checkbox" value="${theme}" ${theme == currentTheme ? 'checked' : ''} />
+        <input theme="${theme}" id="opt${index}" name="option" type="checkbox" value="${theme}" ${
+        theme == currentTheme ? "checked" : ""
+      } />
         <label class="option" for="opt${index}" data-txt="${theme}">${theme}</label>
     </div>
-    `).join('');
+    `
+    )
+    .join("");
 
-    document.querySelector(".theme-selector").innerHTML =
-        `<div class="select">
+  document.querySelector(".theme-selector").innerHTML = `<div class="select">
             <div class="selected" data-def="vs-dark"
                 data-on="Dracula"
                 data-tw="Monokai"
@@ -353,113 +382,105 @@ function load_theme_selector(theme = "vs-dark") {
         </div>    
         
         
-    `
+    `;
 
-    document.querySelectorAll('.theme-selector input[type="checkbox"]').forEach(checkbox => {
-        checkbox.addEventListener('change', (event) => {
-            if (event.target.checked) {
-                set_theme(event.target.value)
-                load_theme_selector(event.target.value);
-
-            }
-        });
+  document
+    .querySelectorAll('.theme-selector input[type="checkbox"]')
+    .forEach((checkbox) => {
+      checkbox.addEventListener("change", (event) => {
+        if (event.target.checked) {
+          set_theme(event.target.value);
+          load_theme_selector(event.target.value);
+        }
+      });
     });
-
 }
-
-langChange();
-fetchTasks();
 
 
 function check_code() {
-    const lines = document.querySelectorAll(".view-line");
+  const lines = document.querySelectorAll(".view-line");
 
-    // Filter out lines that contain the word 'print' and join the remaining lines with newline characters
-    let codes = Array.from(lines)
-        .map(line => line.textContent)
-        .filter(text => !text.includes('print'))
-        .join("\n");
+  // Filter out lines that contain the word 'print' and join the remaining lines with newline characters
+  let codes = Array.from(lines)
+    .map((line) => line.textContent)
+    .filter((text) => !text.includes("print"))
+    .join("\n");
 
-    console.log(codes.split('"""')[2].replace(" ", ""))
-    var fails = 0
+  console.log(codes.split('"""')[2].replace(" ", ""));
+  var fails = 0;
 
-    const parts = codes.split('"""');
-    const thirdPart = parts[2].trim();
-    const containsNumbersOrLetters = /[a-zA-Z0-9]/.test(thirdPart);
+  const parts = codes.split('"""');
+  const thirdPart = parts[2].trim();
+  const containsNumbersOrLetters = /[a-zA-Z0-9]/.test(thirdPart);
 
-    if (!containsNumbersOrLetters) {
-        codes = "<deffault>"
-        fails += 1
-    }
+  if (!containsNumbersOrLetters) {
+    codes = "<deffault>";
+    fails += 1;
+  }
 
-    fetch("/check", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ code: codes, tests: currentTask.tests })
+  fetch("/check", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ code: codes, tests: currentTask.tests }),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Login failed");
+      return res.json();
     })
-        .then(res => {
-            if (!res.ok) throw new Error('Login failed');
-            return res.json();
-        })
-        .then(data => {
+    .then((data) => {
+      let container = document.querySelector(".output");
+      container.classList.add("hidden");
+      container.innerHTML = "";
+      Object.keys(data).forEach((key) => {
+        const p = document.createElement("p");
+        if (data[key].includes("Error")) {
+          data[key] = data[key].split("line ")[1].slice(3);
+        }
+        p.innerHTML = `<span>${key}</span> <span>${data[key]}</span>`;
 
-            let container = document.querySelector(".output")
-            container.classList.add("hidden")
-            container.innerHTML = ""
-            Object.keys(data).forEach(key => {
-                const p = document.createElement('p');
-                if (data[key].includes("Error")) {
-                    data[key] = data[key].split('line ')[1].slice(3,)
+        if (data[key].includes("Error") || data[key][0].includes("fail")) {
+          p.classList.add("fail");
+          fails += 1;
+        } else {
+          p.classList.add("success");
+        }
 
-                }
-                p.innerHTML = `<span>${key}</span> <span>${data[key]}</span>`;
+        container.appendChild(p);
+      });
+      if (fails == 0) {
+        document.querySelector(".sub-button").style.opacity = 1;
+        fails = 0;
+      }
 
-                if (data[key].includes("Error") || data[key][0].includes("fail")) {
-                    p.classList.add('fail');
-                    fails += 1
-                } else {
-                    p.classList.add('success');
-                }
-
-                container.appendChild(p);
-            });
-            if (fails == 0) {
-                document.querySelector(".sub-button").style.opacity = 1
-                fails = 0
-
-
-             
-                
-            }
-
-
-            setTimeout(() => {
-                container.classList.remove("hidden")
-            }, 2000)
-
-
-        })
+      setTimeout(() => {
+        container.classList.remove("hidden");
+      }, 2000);
+    });
 }
 
-
-
-function submit(){
-    fetch("/submit", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ username: usernameOrEmail, task: currentTask.name,reward:currentTask.reward })
+function submit() {
+  fetch("/submit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      username: usernameOrEmail,
+      task: currentTask.name,
+      reward: currentTask.reward,
+    }),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("submition failed");
+      return res.json();
     })
-        .then(res => {
-            if (!res.ok) throw new Error('submition failed');
-            return res.json();
-        })
-        .then(data => {
-
-            console.log(data)
-        })
-
+    .then((data) => {
+      if (!data.msg.includes("task already done")) {
+        auth()
+      }else{
+        document.querySelector(".output").innerHTML = `<p class="fail"><span>This task has already been completed.</span> <span>Unfortunately, you can't receive the reward.</span></p>`;
+    }
+    });
 }

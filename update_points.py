@@ -13,7 +13,7 @@ def update(username, task, reward):
                   
                     user.setdefault("finished_tasks",[])
                     if task in user["finished_tasks"]:
-                        return jsonify({"msg": "task already done", "user": user}), 401
+                        return jsonify({"msg": "task already done", "user": username})
                     
                     user["points"] += reward
                     user["finished_tasks"].append(task)
