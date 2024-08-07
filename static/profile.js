@@ -147,6 +147,10 @@ function auth() {
     });
 }
 function fetchTasks(language = "python") {
+  const monacoEditor = document.querySelector(".monaco-editor")
+  if (monacoEditor){
+    document.querySelector(".content").innerHTML = "<div class='tasks'></div>"
+  }
   const tasks = document.querySelector(".tasks");
   fetch("/exercises", {
     method: "POST",
@@ -221,9 +225,9 @@ function taskEnv(taskName, newLanguage = null, choose = null, theme = null) {
         <div class="theme-selector">
             
         </div>
-        
+        <button class="back-button" onclick="fetchTasks(${currentTask.lang})">< Back</button>
         <button class="run-button" onclick="check_code()">Run > </button>
-        <button class="sub-button" onclick="submit()">submit > </button>
+        <button class="sub-button" disabled onclick="submit()">submit </button>
         <div id="container">
         </div>
 
@@ -287,8 +291,12 @@ function langChange() {
         const langName = document.querySelector(
           ` label[for="${this.id}"]`
         ).textContent;
-
+       
+        // alert()
+        
         fetchTasks(langName.toLowerCase());
+        
+       
       });
     });
 
@@ -437,6 +445,7 @@ function check_code() {
         const p = document.createElement("p");
         if (data[key].includes("Error")) {
           data[key] = data[key].split("line ")[1].slice(3);
+          
         }
         p.innerHTML = `<span>${key}</span> <span>${data[key]}</span>`;
 
@@ -451,12 +460,14 @@ function check_code() {
       });
       if (fails == 0) {
         document.querySelector(".sub-button").style.opacity = 1;
+        document.querySelector(".sub-button").removeAttribute("disabled")
         fails = 0;
+        
       }
 
       setTimeout(() => {
         container.classList.remove("hidden");
-      }, 2000);
+      }, 300);
     });
 }
 
@@ -479,6 +490,10 @@ function submit() {
     .then((data) => {
       if (!data.msg.includes("task already done")) {
         auth()
+        setTimeout(() => {
+          fetchTasks(currentTask.lang)
+        }, 600);
+
       }else{
         document.querySelector(".output").innerHTML = `<p class="fail"><span>This task has already been completed.</span> <span>Unfortunately, you can't receive the reward.</span></p>`;
     }

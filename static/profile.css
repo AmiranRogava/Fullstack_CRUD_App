@@ -160,7 +160,7 @@ div#container {
     height: 100px;
     width: 920px;
     background-color: #1e1e1e;
-    z-index: 2;
+    z-index:666666666666;
     position: absolute;
     border-top: 2px solid #00000040;
     border-bottom-left-radius: 10px;
@@ -195,28 +195,32 @@ div#container {
     line-height: 1.4;
 }
 
-.run-button,.sub-button{
+.run-button,.sub-button,.back-button{
     background-color: #2c2c2e;
     border: none;
     color: rgb(68, 255, 0);
     position: absolute;
-    right: 20px;
+    width: 100px;
     top: 20px;
-    padding: 5px 30px;
+    padding: 4px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 15px;
     border-radius: 5px;
-    margin: 4px 2px;
+    margin: 4px 0px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+.run-button{
+    right: 130px !important;
+}
+
 .sub-button{
     background-color: #c300ff; /* Purple color */
     color: white;
 
-    right: 130px;
+    right: 20px !important;
     opacity: 0.4;
   
 
@@ -230,6 +234,18 @@ background-color:#7c02a2;
 
   
 }
+.back-button{
+    color: #ff4600;
+
+
+    right: 240px !important;
+
+
+}
+.back-button:hover {
+    background-color: #353536;
+}
+
 
 .overflowingContentWidgets{
     display: none !important;
