@@ -62,13 +62,5 @@
          }
      }
 
-    ],
-    "levels": {
-        "beginner": 13,
-        "junior": 50,
-        "master": 100
-    },
-    "top10":{
-        "username":"points"
-    }
+    ]
 }

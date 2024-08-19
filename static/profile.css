@@ -255,14 +255,13 @@ background-color:#7c02a2;
     left:200px;
 }
 
-@keyframes glow {
+@keyframes greenGlow {
     0% {
         text-shadow: 0 0 5px rgba(68, 255, 0, 0.5), 0 0 10px rgba(68, 255, 0, 0.5), 0 0 15px rgba(68, 255, 0, 0.5), 0 0 20px rgba(68, 255, 0, 0.5);
         font-size: 13px;
     }
     50% {
         text-shadow: 0 0 10px rgba(68, 255, 0, 0.7), 0 0 20px rgba(68, 255, 0, 0.7), 0 0 30px rgba(68, 255, 0, 0.7), 0 0 40px rgba(68, 255, 0, 0.7);
-     
     }
     100% {
         text-shadow: 0 0 5px rgba(68, 255, 0, 0.5), 0 0 10px rgba(68, 255, 0, 0.5), 0 0 15px rgba(68, 255, 0, 0.5), 0 0 20px rgba(68, 255, 0, 0.5);
@@ -270,11 +269,33 @@ background-color:#7c02a2;
     }
 }
 
+@keyframes redGlow {
+    0% {
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
+        font-size: 13px;
+    }
+    50% {
+        text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.7);
+    }
+    100% {
+        text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
+        font-size: 15px;
+    }
+}
+
 .allPoints {
     font-size: 13px;
     color: rgb(68, 255, 0) !important;
-    animation: glow 2s  alternate;
+    animation: greenGlow 2s alternate;
 }
+
+.level {
+    font-size: 13px;
+    color: rgb(255, 0, 0) !important;
+    animation: redGlow 2s infinite alternate;
+}
+
+
 
 .done::after{
     --gradient: linear-gradient(to bottom, #ff4600, #ff7500, #ff9b00);

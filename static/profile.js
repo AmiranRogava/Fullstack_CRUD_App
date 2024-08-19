@@ -32,7 +32,24 @@ document.addEventListener("DOMContentLoaded", () => {
     langChange();
     fetchTasks();
 });
+function getUserLevel(points) {
+  const levels = {
+    "amateur": 0,   // Assuming 0 as the starting point for "amateur"
+    "beginner": 13,
+    "junior": 50,
+    "master": 100
+  };
 
+  if (points >= levels.master) {
+    return "master";
+  } else if (points >= levels.junior) {
+    return "junior";
+  } else if (points >= levels.beginner) {
+    return "beginner";
+  } else {
+    return "amateur";
+  }
+}
 
 function auth() {
   fetch("/auth", {
@@ -54,12 +71,14 @@ function auth() {
         const user = data.data;
 
         finished_tasks = user.finished_tasks
+        const userLevel = getUserLevel(user.points);
         profile.innerHTML = `
                 <img src="${user.img}" alt="Profile Picture">
                 <h2>${user.first_name}</h2>
                 <div>
                     <p>Name: ${user.first_name} ${user.last_name}</p>
                     <p class="allPoints">Points: ${user.points || "0"}</p>
+                    <p class="level">Level: ${userLevel}</p> <!-- Added level here -->
                     <p>Email: ${user.email}</p>
                     <p>Location: ${user.location || "Not specified"}</p>
                     <p>Phone: ${user.phone || "Not specified"}</p>

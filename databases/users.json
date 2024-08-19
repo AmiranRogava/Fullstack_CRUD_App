@@ -4,9 +4,9 @@
         "first_name": "gela",
         "last_name": "goga",
         "email": "gelagoga@gmail.com",
-        "img": "https://wallpapers-clan.com/wp-content/uploads/2023/05/cool-pfp-02.jpg",
+        "img": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/c10a26e2-8af9-43b4-b871-1c7dbe15b650/dgddiei-b61b89fc-3af3-418c-874b-6fc0e65e2447.png/v1/fill/w_894,h_894,q_70,strp/scooby_doo_pfp_by_totallynotincina_dgddiei-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTAwMCIsInBhdGgiOiJcL2ZcL2MxMGEyNmUyLThhZjktNDNiNC1iODcxLTFjN2RiZTE1YjY1MFwvZGdkZGllaS1iNjFiODlmYy0zYWYzLTQxOGMtODc0Yi02ZmMwZTY1ZTI0NDcucG5nIiwid2lkdGgiOiI8PTEwMDAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.IUdMV1s8Gz1dMD91ENQcxKGPlKbErN42ESGggliMbSo",
         "password": "gela",
-        "points": 19,
+        "points": 119,
         "finished_tasks": [
             "summing 3 ",
             "summing 1",
@@ -16,18 +16,25 @@
         "location": "",
         "phone": "",
         "age": "",
-        "bio": ""
+        "bio": "Rooby-doo"
     },
     {
         "username": "gela_666",
-        "first_name": "luci",
-        "last_name": "feria",
-        "email": "devil",
-        "img": "https://wallpapers-clan.com/wp-content/uploads/2023/05/cool-pfp-02.jpg",
+        "first_name": "jerry",
+        "last_name": "the mouse",
+        "email": "jerry",
+        "img": "https://i.pinimg.com/236x/03/af/78/03af78eb0044cff9b4cef316c38e001d.jpg",
         "password": "66666666",
-        "location": "ass",
-        "phone": "blackberry",
-        "age": "-666",
+        "points": 100,
+        "finished_tasks": [
+            "summing 3 ",
+            "summing 1",
+            "summing 2",
+            "summing 4"
+        ],
+        "location": "hole in the wall",
+        "phone": "",
+        "age": "infinite",
         "bio": "or naur cleo"
     },
     {
@@ -37,31 +44,70 @@
         "email": "davitidatunashvili98@gmail.com",
         "img": "https://wallpapers-clan.com/wp-content/uploads/2023/05/cool-pfp-02.jpg",
         "password": "rDYVJ5ff2HbDYs7",
+        "points": 14,
+        "finished_tasks": [
+            "summing 3 ",
+            "summing 1",
+            "summing 2",
+            "summing 4"
+        ],
         "location": "",
         "phone": "",
         "age": "100",
         "bio": ""
     },
     {
-        "username": "ono",
-        "first_name": "no",
-        "last_name": "na",
-        "email": "oh",
-        "img": "https://wallpapers-clan.com/wp-content/uploads/2023/05/cool-pfp-02.jpg",
-        "password": "zzzzzzzz"
+        "username": "tommy",
+        "first_name": "tom",
+        "last_name": "the cat",
+        "email": "tom",
+        "img": "https://i.pinimg.com/736x/51/6c/90/516c90e2161a2212deda34b68ead85fc.jpg",
+        "password": "zzzzzzzz",
+        "points": 97,
+        "finished_tasks": [
+            "summing 3 ",
+            "summing 1",
+            "summing 2"
+        ],
+        "location": "",
+        "phone": "",
+        "age": "100",
+        "bio": ""
     },
     {
-        "username": "davitidatunashvili98@gmail.com",
-        "first_name": "david",
-        "last_name": "datunashvili",
-        "email": "davitidatunashvili98@gmail.com",
-        "password": "rDYVJ5ff2HbDYs7"
+        "username": "sarah_lee",
+        "first_name": "Sarah",
+        "last_name": "Lee",
+        "email": "sarah.lee@example.com",
+        "img": "https://i.pinimg.com/736x/50/0d/47/500d47b4c048b72cdd0ab26b36f5d9b7.jpg",
+        "password": "mypassword1",
+        "points": 24,
+        "finished_tasks": [
+            "summing 3 ",
+            "summing 1",
+            "summing 2"
+        ],
+        "location": "Los Angeles, CA",
+        "phone": "555-123-4567",
+        "age": "22",
+        "bio": "Software engineer with a love for coding challenges."
     },
     {
-        "username": "david",
-        "first_name": "david",
-        "last_name": "datunashvili",
-        "email": "davitidatunashvili98@gmail.com",
-        "password": "davit100"
+        "username": "david_martin",
+        "first_name": "David",
+        "last_name": "Martin",
+        "email": "david.martin@example.com",
+        "img": "https://i.pinimg.com/736x/91/77/15/91771562a7e683c0444aeef7345a72d7.jpg",
+        "password": "mypassword4",
+        "points": 40,
+        "finished_tasks": [
+            "summing 3 ",
+            "summing 1",
+            "summing 2"
+        ],
+        "location": "Austin, TX",
+        "phone": "555-456-7890",
+        "age": "31",
+        "bio": "Data analyst with a focus on data visualization."
     }
 ]
