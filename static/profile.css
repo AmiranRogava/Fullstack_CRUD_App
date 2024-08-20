@@ -29,7 +29,7 @@ header{
     height: fit-content;
     gap: 50px;
     margin: 0 auto;
-
+    
     width: 1300px;
 }
 .content{
@@ -39,19 +39,20 @@ header{
     border-radius: 25px;
     padding: 20px;
     position: relative;
-
+    
 }
 
 
 .profile{
-   width: 300px;    
+    min-width: 300px;    
+    max-height: 700px;
     background-color: rgba(0, 0, 0, 0.51);    
     display: flex;
     flex-direction: column;
     border-radius: 25px;
     padding: 60px 30px;
     margin: 0px auto;  
-
+    
     align-items: center;
     
     
@@ -77,6 +78,7 @@ header{
     flex-direction: column;
 }
 .profile > div > p{
+    max-width: 240px;
     display: block;
     text-transform: capitalize;
     font-size: 12px;
@@ -86,6 +88,12 @@ header{
     margin-top: 10px;
     letter-spacing: 0.24px;
     text-align: center;
+}
+.bio{
+    max-width: 240px;
+    max-height:85px;
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 .profile form {

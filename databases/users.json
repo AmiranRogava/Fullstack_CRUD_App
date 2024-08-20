@@ -13,8 +13,6 @@
             "summing 2",
             "summing 4"
         ],
-        "location": "",
-        "phone": "",
         "age": "",
         "bio": "Rooby-doo"
     },
@@ -26,14 +24,7 @@
         "img": "https://i.pinimg.com/236x/03/af/78/03af78eb0044cff9b4cef316c38e001d.jpg",
         "password": "66666666",
         "points": 100,
-        "finished_tasks": [
-            "summing 3 ",
-            "summing 1",
-            "summing 2",
-            "summing 4"
-        ],
-        "location": "hole in the wall",
-        "phone": "",
+        "finished_tasks": [],
         "age": "infinite",
         "bio": "or naur cleo"
     },
@@ -51,8 +42,6 @@
             "summing 2",
             "summing 4"
         ],
-        "location": "",
-        "phone": "",
         "age": "100",
         "bio": ""
     },
@@ -69,44 +58,20 @@
             "summing 1",
             "summing 2"
         ],
-        "location": "",
-        "phone": "",
         "age": "100",
         "bio": ""
     },
     {
-        "username": "sarah_lee",
-        "first_name": "Sarah",
-        "last_name": "Lee",
-        "email": "sarah.lee@example.com",
-        "img": "https://i.pinimg.com/736x/50/0d/47/500d47b4c048b72cdd0ab26b36f5d9b7.jpg",
-        "password": "mypassword1",
-        "points": 24,
+        "username": "username",
+        "first_name": "first name",
+        "last_name": "last name",
+        "email": "email@gmail.com",
+        "img": "https://wallpapers-clan.com/wp-content/uploads/2023/05/cool-pfp-02.jpg",
+        "password": "password",
+        "points": 1,
         "finished_tasks": [
-            "summing 3 ",
-            "summing 1",
-            "summing 2"
+            "summing 6 "
         ],
-        "location": "Los Angeles, CA",
-        "phone": "555-123-4567",
-        "age": "22",
-        "bio": "Software engineer with a love for coding challenges."
-    },
-    {
-        "username": "david_martin",
-        "first_name": "David",
-        "last_name": "Martin",
-        "email": "david.martin@example.com",
-        "img": "https://i.pinimg.com/736x/91/77/15/91771562a7e683c0444aeef7345a72d7.jpg",
-        "password": "mypassword4",
-        "points": 40,
-        "finished_tasks": [
-            "summing 3 ",
-            "summing 1",
-            "summing 2"
-        ],
-        "location": "Austin, TX",
-        "phone": "555-456-7890",
         "age": "31",
         "bio": "Data analyst with a focus on data visualization."
     }

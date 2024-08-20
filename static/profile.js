@@ -76,14 +76,12 @@ function auth() {
                 <img src="${user.img}" alt="Profile Picture">
                 <h2>${user.first_name}</h2>
                 <div>
-                    <p>Name: ${user.first_name} ${user.last_name}</p>
+                    <p>Full Name: ${user.first_name} ${user.last_name}</p>
                     <p class="allPoints">Points: ${user.points || "0"}</p>
                     <p class="level">Level: ${userLevel}</p> <!-- Added level here -->
                     <p>Email: ${user.email}</p>
-                    <p>Location: ${user.location || "Not specified"}</p>
-                    <p>Phone: ${user.phone || "Not specified"}</p>
                     <p>Age: ${user.age || "Not specified"}</p>
-                    <p>Bio: ${user.bio || "No bio provided"}</p>
+                    <p class="bio">Bio: ${user.bio || "No bio provided"}</p>
                     
 
                     <br>
@@ -97,16 +95,6 @@ function auth() {
                     <form id="editForm">
                         <label for="img">Image:</label>
                         <input type="text" id="img" value="${user.img || ""}">
-                        <br>
-                        <label for="location">Location:</label>
-                        <input type="text" id="location" value="${
-                          user.location || ""
-                        }">
-                        <br>
-                        <label for="phone">Phone:</label>
-                        <input type="text" id="phone" value="${
-                          user.phone || ""
-                        }">
                         <br>
                         <label for="age">Age:</label>
                         <input type="text" id="age" value="${user.age || ""}">
@@ -128,9 +116,7 @@ function auth() {
 
               const updatedProfile = {
                 username: user.username,
-                location: document.getElementById("location").value,
                 img: document.getElementById("img").value,
-                phone: document.getElementById("phone").value,
                 age: document.getElementById("age").value,
                 bio: document.getElementById("bio").value,
               };
@@ -299,7 +285,7 @@ ${task.reward}
 
 function logout() {
   localStorage.setItem("user", 0);
-  window.location.href = "/";
+  window.location.href = "/login";
 }
 
 function langChange() {
