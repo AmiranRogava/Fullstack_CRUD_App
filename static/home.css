@@ -9,19 +9,24 @@ html {
   scroll-behavior: smooth;
 }
 body{
-  background-color:white;
+  background-color: #120d17;
+
+
 }
 .blurple {
-  color: #7289da;
+  color: #5c5be5;
 }
 
 .bg-base {
   background-color: #23182c !important;
 }
+/* .footer{
+  background-color: #120d17 !important;
 
+} */
 #backtotop {
   display: inline-block;
-  background-color: #7289da;
+  background-color: #5c5be5;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -59,12 +64,12 @@ body{
 
 .navbar-item:hover {
   background-color: transparent !important;
-  color: #7289da !important;
+  color: #5c5be5 !important;
 }
 
 .navbar-link:hover {
   background-color: transparent !important;
-  color: #7289da !important;
+  color: #5c5be5 !important;
 }
 
 .navbar-menu {
@@ -102,7 +107,7 @@ nav,
 
 .navbar-item.nav-dark,
 .navbar-link.nav-dark {
-  color: #363636 !important;
+  color: #ffffff !important;
 }
 
 .navbar-item,
@@ -111,12 +116,12 @@ nav,
 }
 
 nav.nav-w {
-  background: #fff !important;
+  background-color: #120d17 !important;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
 .nav-w {
-  background: #fff !important;
+  background-color: #120d17 !important;
   box-shadow: 100px 2px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -169,7 +174,7 @@ nav.nav-w {
 }
 
 .line.blurple {
-  background: #7289da;
+  background: #5c5be5;
 }
 
 .title.lined {
@@ -188,7 +193,7 @@ nav.nav-w {
 
 
 .button.is-blurple {
-  background-color: #7289da;
+  background-color: #5c5be5;
   border-color: transparent;
   color: #fff;
 }

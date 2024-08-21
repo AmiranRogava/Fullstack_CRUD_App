@@ -22,7 +22,7 @@
         "last_name": "the mouse",
         "email": "jerry",
         "img": "https://i.pinimg.com/236x/03/af/78/03af78eb0044cff9b4cef316c38e001d.jpg",
-        "password": "66666666",
+        "password": "jerry",
         "points": 100,
         "finished_tasks": [],
         "age": "infinite",
@@ -51,7 +51,7 @@
         "last_name": "the cat",
         "email": "tom",
         "img": "https://i.pinimg.com/736x/51/6c/90/516c90e2161a2212deda34b68ead85fc.jpg",
-        "password": "zzzzzzzz",
+        "password": "tommy",
         "points": 97,
         "finished_tasks": [
             "summing 3 ",

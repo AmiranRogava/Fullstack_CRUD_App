@@ -4,11 +4,15 @@
 
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='comp_styles/bulma.min.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='comp_styles/leaderboard.css') }}" />
+
 <link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}" />
 <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
 <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <script src="{{ url_for('static', filename='jquery-3.6.0.js') }}"></script>
 <!-- Back To Top Start -->
@@ -21,8 +25,7 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand mt-2 mb-2">
         <a class="navbar-item" href="#">
-            <img src="{{ url_for('static', filename='src/node.png') }}" alt="node image" 
-             />
+            <img src="{{ url_for('static', filename='src/logo.png') }}" alt="logo image" />
 
             <!-- or if you want to use image -->
             <!-- <img
@@ -86,17 +89,17 @@
     <div class="hero-body">
         <div class="">
             <div class="columns">
-                <div class="column mr-6 mt-12" data-aos="fade-up" style=" display: flex; flex-direction: column; justify-content:center;">
+                <div class="column mr-6 mt-12" data-aos="fade-up"
+                    style=" display: flex; flex-direction: column; justify-content:center;">
                     <p class="title has-text-white has-text-weight-bold">
-                        Re- Code, Learn, and Master Programming Challenges
+                        CodeQuest: Learn and Code
                     </p>
                     <p class="subtitle has-text-grey-light is-size-6 mt-3">
-                        Welcome to Re:Node, the ultimate platform for honing your coding skills! With our integrated
-                        code editor, you can take on a variety of programming tasks directly within your browser.
-                        Whether you're a beginner looking to learn or an experienced developer aiming to sharpen your
-                        skills, Re:Node offers a seamless environment to practice, solve challenges, and see your code
-                        come to life. Dive into tasks, write and execute code, and watch yourself grow as a coder—all in
-                        one place!
+
+                        Welcome to CodeQuest, your go-to platform for coding practice! Our integrated editor lets you
+                        tackle programming tasks directly in your browser. Whether you're starting out or refining your
+                        skills, CodeQuest provides a smooth environment to practice, solve problems, and see your code
+                        in action—all in one place!
                     </p>
                     <div class="buttons">
                         <a href="login" class="button is-info">
@@ -109,7 +112,8 @@
                     </div>
                 </div>
                 <div class="column mt-6" data-aos="fade-left">
-                    <img class="image has-image-centered vert-move mt-4" src="{{ url_for('static', filename='src/panel.webp') }}" alt="hero image" style="width:30rem"/>
+                    <img class="image has-image-centered vert-move mt-4"
+                        src="{{ url_for('static', filename='src/panel.png') }}" alt="hero image" style="width:30rem" />
 
                 </div>
             </div>
@@ -142,12 +146,14 @@
             <div class="column mr-6">
                 <h4 class="title"><span class="blurple">#1</span> Switch Task by Language</h4>
                 <p class="subtitle mt-3">
-                    Easily switch between coding tasks tailored for Python, JavaScript, or C++. Select a language, and instantly see relevant challenges with clear descriptions and point values. Focus on the skills you want to sharpen, all within a user-friendly interface.
+                    Easily switch between coding tasks tailored for Python, JavaScript, or C++. Select a language, and
+                    instantly see relevant challenges with clear descriptions and point values. Focus on the skills you
+                    want to sharpen, all within a user-friendly interface.
                 </p>
             </div>
             <div class="column" data-aos="fade-left">
-                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features1.gif') }}" alt="feature1 img"
-                    style="width: 23rem;" />
+                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features1.gif') }}"
+                    alt="feature1 img" style="width: 23rem;" />
             </div>
         </div>
     </div>
@@ -157,15 +163,17 @@
     <div class="single-feature">
         <div class="columns mt-6">
             <div class="column" data-aos="fade-right">
-                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features2.gif') }}" alt="feature1 img" 
-                    style="width: 23rem;" />
+                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features2.gif') }}"
+                    alt="feature1 img" style="width: 23rem;" />
             </div>
             <div class="column">
                 <h4 class="title">
                     <span class="has-text-primary">#2</span> Seamless Task Selection
                 </h4>
                 <p class="subtitle mt-3">
-                    Effortlessly choose a coding task and jump right into the editor with a single click. Whether you need to switch tasks or languages, the intuitive interface lets you go back and forth smoothly, keeping you focused and in control of your learning experience.
+                    Effortlessly choose a coding task and jump right into the editor with a single click. Whether you
+                    need to switch tasks or languages, the intuitive interface lets you go back and forth smoothly,
+                    keeping you focused and in control of your learning experience.
                 </p>
             </div>
         </div>
@@ -187,8 +195,8 @@
                 </p>
             </div>
             <div class="column" data-aos="fade-left">
-                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features3.svg') }}" alt="feature1 img"
-                    style="width: 23rem;" />
+                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features3.svg') }}"
+                    alt="feature1 img" style="width: 23rem;" />
             </div>
         </div>
     </div>
@@ -198,8 +206,8 @@
     <div class="single-feature">
         <div class="columns mt-6">
             <div class="column" data-aos="fade-right">
-                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features4.svg') }}" alt="feature1 img"
-                    style="width: 23rem;" />
+                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features4.svg') }}"
+                    alt="feature1 img" style="width: 23rem;" />
             </div>
             <div class="column">
                 <h4 class="title">Feature <span class="has-text-info">#4</span></h4>
@@ -242,28 +250,44 @@
 </section>
 <!-- Stats Section End -->
 <!-- Stats Section Start -->
-<section id="leaderboard" class="section mt-6">
-    <div class="has-text-centered">
-        <h1 class="title lined">Leaderboards</h1>
-        <div class="line line-center blurple"></div>
-    </div>
-
-    <div class="columns mt-6">
-        <div class="column has-text-centered">
-            <p class="title has-text-weight-bold lined">027</p>
-            <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-server"></i> Tasks</span>
+<section id="leaderboard" class="section mt-6" style="display: flex; justify-content: center;">
+    <main>
+        <div id="header">
+          <h1>leaderboard</h1>
+          
         </div>
-
-        <div class="column has-text-centered">
-            <p class="title has-text-weight-bold lined">003</p>
-            <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-terminal"></i> Languages</span>
+        <div id="leaderboard">
+          <div class="ribbon"></div>
+          <table>
+            <tr>
+              <td class="place first" >1</td>
+              <td class="name">Lee Taeyong</td>
+              <td class="points">258 <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal"/>
+              </td>
+            </tr>
+            <tr>
+              <td class="place">2</td>
+              <td class="name">Mark Lee</td>
+              <td class="points">242</td>
+            </tr>
+            <tr>
+              <td class="place">3</td>
+              <td class="name">Xiao Dejun</td>
+              <td class="points">223</td>
+            </tr>
+            <tr>
+              <td class="place">4</td>
+              <td class="name">Qian Kun</td>
+              <td class="points">212</td>
+            </tr>
+            <tr>
+              <td class="place">5</td>
+              <td class="name">Johnny Suh</td>
+              <td class="points">208</td>
+            </tr>
+          </table>
         </div>
-
-        <div class="column has-text-centered">
-            <p class="title has-text-weight-bold lined">027</p>
-            <span class="subtitle has-text-weight-bold blurple"><i class="fa-solid fa-users"></i> Users</span>
-        </div>
-    </div>
+      </main>
 </section>
 <!-- Stats Section End -->
 <!-- Invite Section Start -->
@@ -274,7 +298,7 @@
                 Ready to try our website?
             </p>
             <p class="subtitle mt-3 has-text-gray">
-                Join Re:Node today and start unlocking your coding potential by registering down below!
+                Join CodeQuest today and start unlocking your coding potential by registering down below!
             </p>
             <a href="register" class="button is-blurple is-medium"><strong><i class="fa-solid fa-book"></i> Get
                     Started</strong></a>
