@@ -157,3 +157,36 @@ td {
       font-size: 45%;
     }
 } */
+
+#leaderboard tr:not(:first-child):hover {
+  
+  background-color: #23182c;
+  transform: scale(1.03);
+
+
+  /* -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb; */
+  /* box-shadow: 0px 5px 15px 8px #e4e7fb; */
+
+
+}
+#leaderboard tr:not(:first-child):hover td{
+  z-index: 2;
+
+}
+#leaderboard tr:not(:first-child):hover:has(.place, .points){
+  position: relative;
+}
+#leaderboard tr:not(:first-child):hover:has(.place, .points)::after{
+  content: "";
+  width: calc(100% + 2px);
+  display: block;
+  height: calc(100% + 2px);
+  background-color:  #23182c !important;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  border-radius: 0.5rem;
+  z-index: 1;
+}
+
+
