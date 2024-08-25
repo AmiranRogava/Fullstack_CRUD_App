@@ -12,6 +12,12 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/get_users')
+def get_users():
+    with open('databases/users.json', 'r') as f:
+        users = json.load(f)
+    return jsonify(users)
+
 @app.route('/login')
 def login():
     return render_template('login.html')
