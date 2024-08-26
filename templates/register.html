@@ -3,10 +3,10 @@
 {% block title %}Register{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/register.css') }}">
 
 <div class="register">
-    <img src="{{ url_for('static', filename='src/node.png') }}" alt="Hosting">
+    <img src="{{ url_for('static', filename='src/logo.png') }}" alt="Hosting">
     <h2>Register</h2>
     <div>
         <div>
@@ -34,5 +34,5 @@
     <button class="reg">register</button>
     <a href="/login">already have an account?</a>
 </div>
-<script src="{{ url_for('static', filename='script.js') }}"></script>
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}

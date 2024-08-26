@@ -38,7 +38,8 @@ function loadLeaderboard() {
                 if (index === 0) {
                     const medal = document.createElement('img');
                     medal.className = 'gold-medal';
-                    medal.src = 'https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true';
+                    medal.src = '/static/src/medal.png';
+
                     medal.alt = 'gold medal';
                     pointsCell.appendChild(medal);
                 }

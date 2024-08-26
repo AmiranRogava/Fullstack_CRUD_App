@@ -3,18 +3,19 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+
 <link rel="stylesheet" href="{{ url_for('static', filename='comp_styles/bulma.min.css') }}" />
 <link rel="stylesheet" href="{{ url_for('static', filename='comp_styles/leaderboard.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='comp_styles/aos.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='comp_styles/scale.css') }}" />
+<link rel="stylesheet" href="{{ url_for('static', filename='comp_styles/min.css') }}" />
 
-<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}" />
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
-<link rel="stylesheet" href="https://unpkg.com/tippy.js@6/animations/scale.css" />
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/> 
 
-<script src="{{ url_for('static', filename='jquery-3.6.0.js') }}"></script>
+<script src="{{ url_for('static', filename='js/jquery-3.6.0.js') }}"></script>
+
 <!-- Back To Top Start -->
 <a id="backtotop" data-tippy-content="Back To Top.">
     <i class="fa-solid fa-angle-up has-text-white fa-2xl mt-5"></i>
@@ -144,7 +145,7 @@
     <div class="single-feature">
         <div class="columns mt-6">
             <div class="column mr-6">
-                <h4 class="title"><span class="blurple">#1</span> Switch Task by Language</h4>
+                <h3 class="title"><span class="blurple">#1</span> Switch Task by Language</h3>
                 <p class="subtitle mt-3">
                     Easily switch between coding tasks tailored for Python, JavaScript, or C++. Select a language, and
                     instantly see relevant challenges with clear descriptions and point values. Focus on the skills you
@@ -167,9 +168,9 @@
                     alt="feature1 img" style="width: 23rem;" />
             </div>
             <div class="column">
-                <h4 class="title">
+                <h3 class="title">
                     <span class="has-text-primary">#2</span> Seamless Task Selection
-                </h4>
+                </h3>
                 <p class="subtitle mt-3">
                     Effortlessly choose a coding task and jump right into the editor with a single click. Whether you
                     need to switch tasks or languages, the intuitive interface lets you go back and forth smoothly,
@@ -184,9 +185,9 @@
     <div class="single-feature">
         <div class="columns mt-6">
             <div class="column mr-6">
-                <h4 class="title">
+                <h3 class="title">
                     Feature <span class="has-text-warning">#3</span>
-                </h4>
+                </h3>
                 <p class="subtitle mt-3">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -210,7 +211,7 @@
                     alt="feature1 img" style="width: 23rem;" />
             </div>
             <div class="column">
-                <h4 class="title">Feature <span class="has-text-info">#4</span></h4>
+                <h3 class="title">Feature <span class="has-text-info">#4</span></h3>
                 <p class="subtitle mt-3">
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
@@ -328,11 +329,12 @@
 </footer>
 <!-- Footer Section End -->
 
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
-<script src="{{ url_for('static', filename='home.js') }}"></script>
-<script src="{{ url_for('static', filename='leaderboard.js') }}"></script>
-<script src="{{ url_for('static', filename='scroll.js') }}"></script>
+<script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+<script src="{{ url_for('static', filename='js/popper.js') }}"></script>
+<script src="{{ url_for('static', filename='js/tippy.js') }}"></script>
+
+<script src="{{ url_for('static', filename='js/home.js') }}"></script>
+<script src="{{ url_for('static', filename='js/leaderboard.js') }}"></script>
+<script src="{{ url_for('static', filename='js/scroll.js') }}"></script>
 
 {% endblock %}

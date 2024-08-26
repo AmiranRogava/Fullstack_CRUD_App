@@ -3,7 +3,7 @@
 {% block title %}Login{% endblock %}
 
 {% block content %}
-<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
 
 <div class="login">
     <img src="{{ url_for('static', filename='src/logo.png') }}" alt="Hosting">
@@ -23,6 +23,6 @@
         <a href="/register">NO ACCOUNT?</a>
     </div>
 </div>
-<script src="{{ url_for('static', filename='login.js') }}"></script>
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 
 {% endblock %}
