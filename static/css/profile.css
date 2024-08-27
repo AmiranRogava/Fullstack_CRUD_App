@@ -1,83 +1,91 @@
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "IBM Plex Sans", Roboto, system-ui, sans-serif;
 }
-body{
+
+body {
     background-color: #23182c;
-    
+
     padding: 0px 30px;
 
 }
 
 
-header{
+header {
     width: 1300px;
     height: fit-content;
-    background-color: rgba(0, 0, 0, 0.51);    
+    background-color: rgba(0, 0, 0, 0.51);
     margin: 50px auto;
     display: flex;
     justify-content: space-between;
-    padding: 20px ;
+    padding: 20px;
     border-radius: 25px;
 }
-.container{
+
+.container {
     display: flex;
     height: fit-content;
     gap: 50px;
     margin: 0 auto;
-    
+
     width: 1300px;
 }
-.content{
+
+.content {
     width: 1000px;
     height: 700px;
-    background-color: rgba(0, 0, 0, 0.51);    
+    background-color: rgba(0, 0, 0, 0.51);
     border-radius: 25px;
     padding: 20px;
     position: relative;
-    
+
 }
 
 
-.profile{
-    min-width: 300px;    
+.profile {
+    min-width: 300px;
     max-height: 700px;
-    background-color: rgba(0, 0, 0, 0.51);    
+    background-color: rgba(0, 0, 0, 0.51);
     display: flex;
     flex-direction: column;
     border-radius: 25px;
     padding: 60px 30px;
-    margin: 0px auto;  
-    
+    margin: 0px auto;
+
     align-items: center;
-    
-    
+
 }
-.profile img{
+
+.profile img {
     border-radius: 50%;
     height: 150px;
     width: 150px;
 }
-.profile h2{
+
+.profile h2 {
     font-size: 30px;
     line-height: 35.6px;
     text-align: center;
     color: #fff;
     font-weight: 500;
-    padding-left: 16px;
-    padding-right: 16px;
-    margin-top: 32px;
-    margin-bottom: 32px;
+
+    margin-top: 11px;
+    /* margin-bottom: 13px; */
 }
-.profile > div{
+
+.profile>div {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    height: 100%;
+    /* justify-content: space-between; */
 }
-.profile > div > p{
+
+.profile>div>p {
     max-width: 240px;
     display: block;
     text-transform: capitalize;
@@ -89,15 +97,17 @@ header{
     letter-spacing: 0.24px;
     text-align: center;
 }
-.bio{
+
+.bio {
     max-width: 240px;
-    max-height:85px;
+    max-height: 100px;
     overflow-y: auto;
     overflow-x: hidden;
+    word-break: break-word;
 }
 
 .profile form {
-    width: 100%; 
+    width: 100%;
 }
 
 .profile form label {
@@ -118,6 +128,7 @@ header{
     border-radius: 4px;
     font-size: 12px;
     line-height: 16px;
+
 }
 
 .profile form textarea {
@@ -130,8 +141,13 @@ header{
     width: 100%;
     margin-top: 20px;
 }
+#editForm > span{
+    font-size: 12px;
+    line-height: 16px;
+    color: #ededed;
+}
 
-.tasks{
+.tasks {
     display: grid;
     gap: 20px;
     flex-direction: column;
@@ -145,52 +161,60 @@ header{
     width: 100%;
 
 }
-#container:hover{
+
+#container:hover {
     z-index: 100;
 }
-.monaco-editor,#container,.monaco-editor > div{
+
+.monaco-editor,
+#container,
+.monaco-editor>div {
     border-radius: 10px !important;
     border: none;
     --vscode-focusBorder: #110c15 !important;
-  
+
     z-index: 1;
     position: relative;
 }
 
 div#container {
-    background-color:  #1e1e1e;
+    background-color: #1e1e1e;
     padding-top: 20px;
     margin-top: 50px;
 }
 
 
-.output{
+.output {
     height: 100px;
     width: 920px;
     background-color: #1e1e1e;
-    z-index:666666666666;
+    z-index: 666666666666;
     position: absolute;
     border-top: 2px solid #00000040;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     padding: 20px;
 }
-.output.hidden p{
+
+.output.hidden p {
     display: none;
 }
-.output p{
+
+.output p {
     display: flex;
     gap: 30px;
 }
+
 .output span {
     color: #44ff00;
     font-weight: bold;
     line-height: 1.4;
 }
 
-.output p.deffault{
+.output p.deffault {
     color: #c300ff;
 }
+
 .output p.success span:nth-child(2) {
     color: #c300ff;
     font-weight: bold;
@@ -203,7 +227,9 @@ div#container {
     line-height: 1.4;
 }
 
-.run-button,.sub-button,.back-button{
+.run-button,
+.sub-button,
+.back-button {
     background-color: #2c2c2e;
     border: none;
     color: rgb(68, 255, 0);
@@ -220,47 +246,41 @@ div#container {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-.run-button{
+
+.run-button {
     right: 130px !important;
 }
 
-.sub-button{
-    background-color: #c300ff; /* Purple color */
+.sub-button {
+    background-color: #c300ff;
     color: white;
-
     right: 20px !important;
     opacity: 0.4;
-  
-
 }
-.sub-button:hover{
-background-color:#7c02a2;
+
+.sub-button:hover {
+    background-color: #7c02a2;
 }
 
 .run-button:hover {
     background-color: #353536;
-
-  
 }
-.back-button{
+
+.back-button {
     color: #ff4600;
-
-
     right: 240px !important;
-
-
 }
+
 .back-button:hover {
     background-color: #353536;
 }
 
-
-.overflowingContentWidgets{
+.overflowingContentWidgets {
     display: none !important;
 }
 
-.theme-selector .select{
-    left:200px;
+.theme-selector .select {
+    left: 200px;
 }
 
 @keyframes greenGlow {
@@ -268,9 +288,11 @@ background-color:#7c02a2;
         text-shadow: 0 0 5px rgba(68, 255, 0, 0.5), 0 0 10px rgba(68, 255, 0, 0.5), 0 0 15px rgba(68, 255, 0, 0.5), 0 0 20px rgba(68, 255, 0, 0.5);
         font-size: 13px;
     }
+
     50% {
         text-shadow: 0 0 10px rgba(68, 255, 0, 0.7), 0 0 20px rgba(68, 255, 0, 0.7), 0 0 30px rgba(68, 255, 0, 0.7), 0 0 40px rgba(68, 255, 0, 0.7);
     }
+
     100% {
         text-shadow: 0 0 5px rgba(68, 255, 0, 0.5), 0 0 10px rgba(68, 255, 0, 0.5), 0 0 15px rgba(68, 255, 0, 0.5), 0 0 20px rgba(68, 255, 0, 0.5);
         font-size: 15px;
@@ -282,9 +304,11 @@ background-color:#7c02a2;
         text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
         font-size: 13px;
     }
+
     50% {
         text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.7), 0 0 30px rgba(255, 0, 0, 0.7), 0 0 40px rgba(255, 0, 0, 0.7);
     }
+
     100% {
         text-shadow: 0 0 5px rgba(255, 0, 0, 0.5), 0 0 10px rgba(255, 0, 0, 0.5), 0 0 15px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 0, 0, 0.5);
         font-size: 15px;
@@ -303,25 +327,24 @@ background-color:#7c02a2;
     animation: redGlow 2s infinite alternate;
 }
 
-
-
-.done::after{
+.done::after {
     --gradient: linear-gradient(to bottom, #ff4600, #ff7500, #ff9b00);
 
 }
-.done .notititle{
+
+.done .notititle {
     color: #ff7500;
 
 }
-.notibody span{
-    margin-top:20px;
+
+.notibody span {
+    margin-top: 20px;
     color: #ff7500;
-
     text-transform: capitalize;
-
     display: block;
 }
-    .notibody i{
+
+.notibody i {
     font-style: normal;
     text-transform: capitalize;
     margin-top: 20px;

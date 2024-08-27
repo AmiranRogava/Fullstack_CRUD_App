@@ -76,18 +76,18 @@ function auth() {
                 <img src="${user.img}" alt="Profile Picture">
                 <h2>${user.first_name}</h2>
                 <div>
-                    <p>Full Name: ${user.first_name} ${user.last_name}</p>
-                    <p class="allPoints">Points: ${user.points || "0"}</p>
-                    <p class="level">Level: ${userLevel}</p> <!-- Added level here -->
-                    <p>Email: ${user.email}</p>
-                    <p>Age: ${user.age || "Not specified"}</p>
-                    <p class="bio">Bio: ${user.bio || "No bio provided"}</p>
-                    
-
-                    <br>
-                    <button type="button" class="edit ui-btn">Edit Profile</button>
-                    <br>
-                    <button onclick="logout()" type="button" class="ui-btn">Log Out</button>
+                  <p>Full Name: ${user.first_name} ${user.last_name}</p>
+                  <p class="allPoints">Points: ${user.points || "0"}</p>
+                  <p class="level">Level: ${userLevel}</p> <!-- Added level here -->
+                  <p>Email: ${user.email}</p>
+                  <p>Age: ${user.age || "Not specified"}</p>
+                  <p class="bio">Bio: ${user.bio || "No bio provided"}</p>
+                
+                  <br>
+                  <button type="button" class="edit ui-btn"><span>Edit Profile</span></button>
+                  <br>
+                  <button onclick="logout()" type="button" class="ui-btn"><span>Log Out</span></button>
+                </div>
             `;
 
         profile.querySelector(".edit").addEventListener("click", () => {
@@ -95,14 +95,16 @@ function auth() {
                     <form id="editForm">
                         <label for="img">Image:</label>
                         <input type="text" id="img" value="${user.img || ""}">
-                        <br>
+                        
                         <label for="age">Age:</label>
                         <input type="text" id="age" value="${user.age || ""}">
-                        <br>
+                        
                         <label for="bio">Bio:</label>
-                        <textarea id="bio">${user.bio || ""}</textarea>
+                        <textarea id="bio" maxlength="200">${user.bio || ""}</textarea>
+                        <span>max number of characters is 200*</span>
                         <br>
-                        <button type="submit" class="ui-btn">Save</button>
+                        <button type="submit" class="ui-btn"><span>Save
+                        </span></button>
                     </form>
                     
                 `;
