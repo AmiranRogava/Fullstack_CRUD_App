@@ -1,10 +1,10 @@
 from flask import Flask, render_template, request, jsonify, redirect, url_for
 import json, os
-from registration import isRegistered, addUser
-from decorators import validate_form,authorize
-from update_profile import update_profile
-import update_points
-import checker
+from functions.registration import isRegistered, addUser
+from functions.decorators import validate_form,authorize
+from functions.update_profile import update_profile
+import functions.update_points as update_points
+import functions.checker as checker
 
 app = Flask(__name__)
 

@@ -107,7 +107,7 @@ td {
 .ribbon {
   width: calc(100% + 2rem); /* Expand width by 2rem on both sides */
   height:85px; /* Expand height by 2rem (5rem + 2rem) */
-  background-color: #624d72;
+  background-color: #270046;
   position: absolute;
   left: -1rem; /* Center the ribbon */
   border-radius: 0.5rem;

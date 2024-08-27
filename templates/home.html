@@ -26,7 +26,7 @@
 <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
     <div class="navbar-brand mt-2 mb-2">
         <a class="navbar-item" href="#">
-            <img src="{{ url_for('static', filename='src/logo.png') }}" alt="logo image" />
+            <img  class="logo" src="{{ url_for('static', filename='src/logo.png') }}" alt="logo image" />
 
             <!-- or if you want to use image -->
             <!-- <img
@@ -86,7 +86,7 @@
 <!-- Navbar End -->
 
 <!-- Hero Section Start -->
-<section class="hero bg-base is-fullheight">
+<section class="hero bg-base is-fullheight mt-6">
     <div class="hero-body">
         <div class="">
             <div class="columns">
@@ -113,22 +113,20 @@
                     </div>
                 </div>
                 <div class="column mt-6" data-aos="fade-left">
-                    <img class="image has-image-centered vert-move mt-4"
-                        src="{{ url_for('static', filename='src/panel.png') }}" alt="hero image" style="width:30rem" />
+                    <img class="image has-image-centered vert-move mt-5 baneri"
+                        src="{{ url_for('static', filename='src/panel.jpg') }}" alt="hero image"  />
 
                 </div>
             </div>
         </div>
     </div>
-    <div class="has-text-centered" data-tippy-content="Scroll Down">
-        <a href="#features"><i class="fa-solid fa-circle-chevron-down fa-lg vert-move2 has-text-white"></i></a>
-    </div>
+
 </section>
 <!-- Hero Section End -->
 
 <!-- Hero Waves Start -->
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-    <path fill="#23182c" fill-opacity="1"
+    <path fill="#270046" fill-opacity="1"
         d="M0,288L24,261.3C48,235,96,181,144,154.7C192,128,240,128,288,149.3C336,171,384,213,432,202.7C480,192,528,128,576,133.3C624,139,672,213,720,213.3C768,213,816,139,864,101.3C912,64,960,64,1008,106.7C1056,149,1104,235,1152,240C1200,245,1248,171,1296,144C1344,117,1392,139,1416,149.3L1440,160L1440,0L1416,0C1392,0,1344,0,1296,0C1248,0,1200,0,1152,0C1104,0,1056,0,1008,0C960,0,912,0,864,0C816,0,768,0,720,0C672,0,624,0,576,0C528,0,480,0,432,0C384,0,336,0,288,0C240,0,192,0,144,0C96,0,48,0,24,0L0,0Z">
     </path>
 </svg>
@@ -154,7 +152,7 @@
             </div>
             <div class="column" data-aos="fade-left">
                 <img class="image has-image-centered" src="{{ url_for('static', filename='src/features1.gif') }}"
-                    alt="feature1 img" style="width: 23rem;" />
+                    alt="feature1 img"  />
             </div>
         </div>
     </div>
@@ -165,7 +163,7 @@
         <div class="columns mt-6">
             <div class="column" data-aos="fade-right">
                 <img class="image has-image-centered" src="{{ url_for('static', filename='src/features2.gif') }}"
-                    alt="feature1 img" style="width: 23rem;" />
+                    alt="feature1 img"  />
             </div>
             <div class="column">
                 <h3 class="title">
@@ -197,7 +195,7 @@
             </div>
             <div class="column" data-aos="fade-left">
                 <img class="image has-image-centered" src="{{ url_for('static', filename='src/features3.svg') }}"
-                    alt="feature1 img" style="width: 23rem;" />
+                    alt="feature1 img"  />
             </div>
         </div>
     </div>
@@ -208,7 +206,7 @@
         <div class="columns mt-6">
             <div class="column" data-aos="fade-right">
                 <img class="image has-image-centered" src="{{ url_for('static', filename='src/features4.svg') }}"
-                    alt="feature1 img" style="width: 23rem;" />
+                    alt="feature1 img"  />
             </div>
             <div class="column">
                 <h3 class="title">Feature <span class="has-text-info">#4</span></h3>
