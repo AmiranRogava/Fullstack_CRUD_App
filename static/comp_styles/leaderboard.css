@@ -1,7 +1,7 @@
 main {
   width: fit-content;
   height: fit-content;
-  background-color: #23182c;
+  background-color: #270046;
   /* -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb; */
   /* box-shadow: 0px 5px 15px 8px #e4e7fb; */
   display: flex;
@@ -47,15 +47,17 @@ tr {
 
 
 tr:not(:first-child):hover {
-  background-color: #23182c;
+  background-color: #270046;
   transform: scale(1.03);
   border: radius 1rem;
-  /* -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb; */
-  /* box-shadow: 0px 5px 15px 8px #e4e7fb; */
+
 }
 
 tr:nth-child(odd) {
-  background-color: #281c31;
+  background-color: #430377;
+}
+tr:not(:first-child):nth-child(odd):hover {
+  background-color: #430377;
 }
 
 .place {
@@ -107,67 +109,17 @@ td {
 .ribbon {
   width: calc(100% + 2rem); /* Expand width by 2rem on both sides */
   height:85px; /* Expand height by 2rem (5rem + 2rem) */
-  background-color: #270046;
+  background-color: #530693;
   position: absolute;
   left: -1rem; /* Center the ribbon */
   border-radius: 0.5rem;
-  /* top: 3px; */
-  /* -webkit-box-shadow: 0px 15px 11px -6px #7a7a7d; */
-  /* box-shadow: 0px 15px 11px -6px #7a7a7d; */
-}
 
-.ribbon::before {
-  content: "";
-  height: 1.5rem;
-  width: 1.5rem;
-  bottom: -0.8rem;
-  left: 0.35rem;
-  transform: rotate(45deg);
-  background-color: #5c5be5;
-  position: absolute;
-  z-index: -1;
 }
-
-.ribbon::after {
-  content: "";
-  height: 1.5rem;
-  width: 1.5rem;
-  bottom: -0.8rem;
-  right: 0.35rem;
-  transform: rotate(45deg);
-  background-color: #5c5be5;
-  position: absolute;
-  z-index: -1;
-}
-
-/* @media (max-width: 740px) {
-    * {
-      font-size: 70%;
-    }
-}
-
-@media (max-width: 500px) {
-    * {
-      font-size: 55%;
-    }
-}
-
-@media (max-width: 390px) {
-    * {
-      font-size: 45%;
-    }
-} */
 
 #leaderboard tr:not(:first-child):hover {
   
-  background-color: #23182c;
+  /* background-color: #270046; */
   transform: scale(1.03);
-
-
-  /* -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb; */
-  /* box-shadow: 0px 5px 15px 8px #e4e7fb; */
-
-
 }
 #leaderboard tr:not(:first-child):hover td{
   z-index: 2;
@@ -181,7 +133,7 @@ td {
   width: calc(100% + 2px);
   display: block;
   height: calc(100% + 2px);
-  background-color:  #23182c !important;
+  /* background-color:  #270046 !important; */
   position: absolute;
   left: -1px;
   top: -1px;

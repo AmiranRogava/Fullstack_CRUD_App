@@ -11,7 +11,6 @@ html {
 body{
   background-color: #120d17;
 
-
 }
 .blurple {
   color: #5c5be5;
@@ -217,7 +216,7 @@ nav.nav-w {
 
 
 .button.is-blurple {
-  background-color: #5c5be5;
+  background-color: #a100c9;
   border-color: transparent;
   color: #fff;
 }
