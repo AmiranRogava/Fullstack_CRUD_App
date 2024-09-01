@@ -1,5 +1,7 @@
 main {
   width: fit-content;
+  max-width: 1200px;
+
   height: fit-content;
   background-color: #270046;
   /* -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb; */
@@ -107,7 +109,7 @@ td {
 }
 
 .ribbon {
-  width: calc(100% + 2rem); /* Expand width by 2rem on both sides */
+  width: calc(100% + 2rem) !important; /* Expand width by 2rem on both sides */
   height:85px; /* Expand height by 2rem (5rem + 2rem) */
   background-color: #530693;
   position: absolute;

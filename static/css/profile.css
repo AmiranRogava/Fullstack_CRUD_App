@@ -29,7 +29,7 @@ header {
 .container {
     display: flex;
     height: fit-content;
-    gap: 50px;
+    gap: 40px;
     margin: 0 auto;
 
     width: 1300px;

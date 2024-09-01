@@ -74,7 +74,7 @@ function auth() {
         const userLevel = getUserLevel(user.points);
         profile.innerHTML = `
                 <img src="${user.img}" alt="Profile Picture">
-                <h2>${user.first_name}</h2>
+                <h2>${user.username}</h2>
                 <div>
                   <p>Full Name: ${user.first_name} ${user.last_name}</p>
                   <p class="allPoints">Points: ${user.points || "0"}</p>
