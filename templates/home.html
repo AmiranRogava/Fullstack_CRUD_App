@@ -12,7 +12,7 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='comp_styles/min.css') }}" />
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
 
 <script src="{{ url_for('static', filename='js/jquery-3.6.0.js') }}"></script>
 
@@ -23,70 +23,74 @@
 <!-- Back To Top End -->
 
 <!-- Navbar Start -->
-<nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
-    <div class="navbar-brand mt-2 mb-2">
-        <a class="navbar-item" href="#">
-            <img  class="logo" src="{{ url_for('static', filename='src/logo.png') }}" alt="logo image" />
+<div class="navi">
 
-            <!-- or if you want to use image -->
-            <!-- <img
+
+    <nav class="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand mt-2 mb-2">
+            <a class="navbar-item" href="#">
+                <img class="logo" src="{{ url_for('static', filename='src/logo.png') }}" alt="logo image" />
+
+                <!-- or if you want to use image -->
+                <!-- <img
           src="image link or path"
           width="112"
           height="28"
         /> -->
-        </a>
-
-        <a role="button" class="navbar-burger has-text-white" data-target="navMenu" aria-label="menu"
-            aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-        </a>
-    </div>
-
-    <div id="navbarBasicExample" class="navbar-menu">
-        <div class="navbar-start">
-            <a href="#" class="navbar-item is-tab">
-                Home
             </a>
 
-            <a href="#features" class="navbar-item is-tab">
-                Features
-            </a>
-
-            <a href="#stats" class="navbar-item is-tab">
-                Stats
-            </a>
-
-            <a href="#" class="navbar-item is-tab">
-                Docs
+            <a role="button" class="navbar-burger has-text-white" data-target="navMenu" aria-label="menu"
+                aria-expanded="false">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </a>
         </div>
 
-        <div class="navbar-end">
-            <a href="#" class="navbar-item is-tab" target="_blank">
-                <i class="fa-brands fa-discord"></i>
-            </a>
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a href="#" class="navbar-item is-tab">
+                    Home
+                </a>
 
-            <a href="https://github.com/AmiranRogava" class="navbar-item is-tab" target="_blank">
-                <i class="fa-brands fa-github"></i>
-            </a>
+                <a href="#features" class="navbar-item is-tab">
+                    Features
+                </a>
 
-            <div class="navbar-item">
-                <div class="buttons">
-                    <a href="login" class="button is-blurple">
-                        <strong><i class="fa-solid fa-right-to-bracket mr-2"></i>
-                            Login</strong>
-                    </a>
+                <a href="#stats" class="navbar-item is-tab">
+                    Stats
+                </a>
+
+                <a href="#" class="navbar-item is-tab">
+                    Docs
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <a href="#" class="navbar-item is-tab" target="_blank">
+                    <i class="fa-brands fa-discord"></i>
+                </a>
+
+                <a href="https://github.com/AmiranRogava" class="navbar-item is-tab" target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a href="login" class="button is-blurple">
+                            <strong><i class="fa-solid fa-right-to-bracket mr-2"></i>
+                                Login</strong>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</nav>
+    </nav>
+</div>
 <!-- Navbar End -->
 
 <!-- Hero Section Start -->
-<section class="hero bg-base is-fullheight mt-6">
+<section class="hero bg-base is-fullheight pt-6">
     <div class="hero-body">
         <div class="">
             <div class="columns">
@@ -113,8 +117,8 @@
                     </div>
                 </div>
                 <div class="column mt-6" data-aos="fade-left">
-                    <img class="image has-image-centered vert-move mt-5 baneri"
-                        src="{{ url_for('static', filename='src/panel.jpg') }}" alt="hero image"  />
+                    <img class="image has-image-centered vert-move mt-6 baneri"
+                        src="{{ url_for('static', filename='src/panel.jpg') }}" alt="hero image" />
 
                 </div>
             </div>
@@ -152,7 +156,7 @@
             </div>
             <div class="column" data-aos="fade-left">
                 <img class="image has-image-centered" src="{{ url_for('static', filename='src/features1.gif') }}"
-                    alt="feature1 img"  />
+                    alt="feature1 img" />
             </div>
         </div>
     </div>
@@ -163,7 +167,7 @@
         <div class="columns mt-6">
             <div class="column" data-aos="fade-right">
                 <img class="image has-image-centered" src="{{ url_for('static', filename='src/features2.gif') }}"
-                    alt="feature1 img"  />
+                    alt="feature1 img" />
             </div>
             <div class="column">
                 <h3 class="title">
@@ -184,15 +188,17 @@
         <div class="columns mt-6">
             <div class="column mr-6">
                 <h3 class="title"><span class="has-text-warning">#3</span>
-                    Dynamic Editor Customization 
+                    Dynamic Editor Customization
                 </h3>
                 <p class="subtitle mt-3">
-                    Easily switch between Python, JavaScript, and C++ directly within the editor, and select your preferred theme. Seamlessly customize your coding environment to suit your needs, keeping your focus sharp and on the task at hand.
+                    Easily switch between Python, JavaScript, and C++ directly within the editor, and select your
+                    preferred theme. Seamlessly customize your coding environment to suit your needs, keeping your focus
+                    sharp and on the task at hand.
                 </p>
             </div>
             <div class="column" data-aos="fade-left">
                 <img class="image has-image-centered" src="{{ url_for('static', filename='src/features3.gif') }}"
-                    alt="feature1 img"  />
+                    alt="feature1 img" />
             </div>
         </div>
     </div>
@@ -203,12 +209,14 @@
         <div class="columns mt-6">
             <div class="column" data-aos="fade-right">
                 <img class="image has-image-centered" src="{{ url_for('static', filename='src/features4.gif') }}"
-                    alt="feature1 img"  />
+                    alt="feature1 img" />
             </div>
             <div class="column">
                 <h3 class="title"><span class="has-text-info">#4</span>Task Execution and Progression</h3>
                 <p class="subtitle mt-3">
-                    Complete your coding tasks directly within the editor, test your solution by running it, and submit your work to earn points. Successfully completing tasks helps you level up, track your progress, and enhance your skills in a structured way.
+                    Complete your coding tasks directly within the editor, test your solution by running it, and submit
+                    your work to earn points. Successfully completing tasks helps you level up, track your progress, and
+                    enhance your skills in a structured way.
                 </p>
             </div>
         </div>
@@ -246,13 +254,13 @@
 <section id="leaderboard" class="section mt-6" style="display: flex; justify-content: center;">
     <main>
         <div id="header">
-          <h1>leaderboard</h1>
-          
+            <h1>leaderboard</h1>
+
         </div>
         <div id="leaderboard">
-          <div class="ribbon"></div>
-          <table>
-            <!-- <tr>
+            <div class="ribbon"></div>
+            <table>
+                <!-- <tr>
               <td class="place first" >1</td>
               <td class="name">Lee Taeyong</td>
               <td class="points">258 <img class="gold-medal" src="https://github.com/malunaridev/Challenges-iCodeThis/blob/master/4-leaderboard/assets/gold-medal.png?raw=true" alt="gold medal"/>
@@ -278,9 +286,9 @@
               <td class="name">Johnny Suh</td>
               <td class="points">208</td>
             </tr> -->
-          </table>
+            </table>
         </div>
-      </main>
+    </main>
 </section>
 <!-- Stats Section End -->
 <!-- Invite Section Start -->

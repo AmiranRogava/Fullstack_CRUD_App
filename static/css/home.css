@@ -8,14 +8,20 @@
 html {
   scroll-behavior: smooth;
 }
-body{
+
+body {
   background-color: #120d17;
 }
 
-section > div{
+.hero-body {
+  padding: 0 !important;
+}
+
+section>div {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 .blurple {
   color: #5c5be5;
 }
@@ -23,20 +29,23 @@ section > div{
 .bg-base {
   background-color: #270046 !important;
 }
+
 /* .footer{
   background-color: #120d17 !important;
 
 } */
 .hero.is-fullheight {
   min-height: initial !important;
-  max-height:  600px;
+  max-height: 600px;
 }
-.logo{
+
+.logo {
   height: 100px;
-  width:  auto;
+  width: auto;
   display: block;
   max-height: initial !important;
 }
+
 #backtotop {
   display: inline-block;
   background-color: #5c5be5;
@@ -66,20 +75,41 @@ section > div{
   opacity: 0.4;
   visibility: visible;
 }
+
 .navbar {
-  padding-left: 30px ;
-  padding-right: 30px ;
+
+  max-width: 1200px;
+
+  margin: auto;
   align-items: center;
 }
-#navbarBasicExample{
+
+.navbar-item:nth-child(1) {
+  padding-left: 0 !important;
+}
+
+.navbar-item:has(.button) {
+  padding-right: 0 !important;
+
+}
+
+.navi {
+  width: 100%;
+  height: 132px;
+  position: fixed;
+  z-index: 30;
+  background-color: #270046;
+}
+.navi:has(nav.nav-w){
+  background-color: #120d17 !important;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1) !important;
+}
+#navbarBasicExample {
   padding-top: 40px;
   height: fit-content;
-  
+
 }
-.baneri{
-  height: 400px;
-  filter: hue-rotate(388deg)
-}
+
 .navbar-item,
 .navbar-link {
   -moz-transition: all 0.2s ease-in;
@@ -109,18 +139,22 @@ section > div{
     opacity: 0;
     max-height: 0;
   }
+
   1% {
     display: block;
     opacity: 0;
   }
+
   100% {
     opacity: 1;
     max-height: 396px;
   }
+
   from {
     opacity: 0;
     transform: translateY(-5px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0px);
@@ -144,7 +178,6 @@ nav,
 
 nav.nav-w {
   background-color: #120d17 !important;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
 .nav-w {
@@ -247,14 +280,25 @@ nav.nav-w {
 @media (max-width: 767px) {
   .hero.is-fullheight {
 
-    max-height:  100vh;
+    max-height: 100vh;
   }
-  .shape-right
- {
+
+  .shape-right {
     display: none;
   }
 }
 
+.navbar {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.navbar-burger {
+  margin-top: 30px !important;
+}
+.navbar-burger span{
+  font-size: 23px !important;
+}
 .shape-left {
   position: absolute;
   top: -80px;
@@ -273,4 +317,14 @@ nav.nav-w {
   .shape-left {
     display: none;
   }
+}
+
+
+@media screen and (min-width:1000px) {
+  .baneri {
+    height: 400px;
+    margin-right: 0 !important;
+    filter: hue-rotate(388deg)
+  }
+
 }

@@ -154,6 +154,7 @@ function auth() {
     });
 }
 function fetchTasks(language = "python") {
+
   const monacoEditor = document.querySelector(".monaco-editor")
   if (monacoEditor){
     document.querySelector(".content").innerHTML = "<div class='tasks'></div>"
@@ -197,6 +198,7 @@ function fetchTasks(language = "python") {
 
 function taskEnv(taskName, newLanguage = null, choose = null, theme = null) {
   currentTask = exercises.find((task) => task.name === taskName);
+  currentTask.lang = newLanguage
   if (!choose) document.querySelector(".tasks").remove();
   document.querySelector(".content").innerHTML = "";
 
@@ -232,7 +234,7 @@ function taskEnv(taskName, newLanguage = null, choose = null, theme = null) {
         <div class="theme-selector">
             
         </div>
-        <button class="back-button" onclick="fetchTasks(${currentTask.lang})">< Back</button>
+        <button class="back-button" onclick="fetchTasks('${currentTask.lang}')">< Back</button>
         <button class="run-button" onclick="check_code()">Run > </button>
         <button class="sub-button" disabled onclick="submit()">submit </button>
         <div id="container">
@@ -413,20 +415,33 @@ function load_theme_selector(theme = "vs-dark") {
 
 
 function check_code() {
+  if (currentTask.lang != "python"){
+    console.log("only python is supported yet")
+    return 
+  }
   const lines = document.querySelectorAll(".view-line");
 
   // Filter out lines that contain the word 'print' and join the remaining lines with newline characters
-  let codes = Array.from(lines)
+  codes = Array.from(lines)
     .map((line) => line.textContent)
-    .filter((text) => !text.includes("print"))
+    .filter((text) => !text.includes("print") || !text.includes("console.log"))
     .join("\n");
 
-  console.log(codes.split('"""')[2].replace(" ", ""));
+  // console.log(codes.split('"""')[2].replace(" ", ""));
   var fails = 0;
+  var codes
 
-  const parts = codes.split('"""');
-  const thirdPart = parts[2].trim();
-  const containsNumbersOrLetters = /[a-zA-Z0-9]/.test(thirdPart);
+
+  if (currentTask.lang == "python"){
+    codes = codes.split('"""');
+    codes = codes[2].trim();
+  }
+  else{
+    codes = codes.split('*/');
+    codes = codes[1].trim();
+  }
+
+  let containsNumbersOrLetters = /[a-zA-Z0-9]/.test(codes);
 
   if (!containsNumbersOrLetters) {
     codes = "<deffault>";
@@ -438,7 +453,7 @@ function check_code() {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ code: codes, tests: currentTask.tests }),
+    body: JSON.stringify({ code: codes, tests: currentTask.tests , lang: currentTask.lang}),
   })
     .then((res) => {
       if (!res.ok) throw new Error("Login failed");
@@ -451,7 +466,9 @@ function check_code() {
       Object.keys(data).forEach((key) => {
         const p = document.createElement("p");
         if (data[key].includes("Error")) {
-          data[key] = data[key].split("line ")[1].slice(3);
+          if (currentTask.lang == "python"){
+            data[key] = data[key].split("line ")[1].slice(3);
+          }
           
         }
         p.innerHTML = `<span>${key}</span> <span>${data[key]}</span>`;
@@ -506,3 +523,5 @@ function submit() {
     }
     });
 }
+
+

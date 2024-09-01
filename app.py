@@ -79,8 +79,14 @@ def get_tasks():
 @app.route("/check", methods=["POST"])
 def answer_checker():
     data = request.get_json()
+    print(data.get("code"))
     code = data.get("code").replace(" ", " ")
-
+   
+    lang = data.get("lang")
+    
+    if lang == "javascript" or lang == "cpp":
+        return jsonify({f"⚠️⚠️ {lang} ":"running  Error  ⚠️⚠️"})
+    
     with open("tempcode.py", "w") as f: 
         f.write("")
     try:
