@@ -417,7 +417,7 @@ function load_theme_selector(theme = "vs-dark") {
 function check_code() {
   if (currentTask.lang != "python"){
     console.log("only python is supported yet")
-    return 
+    // return 
   }
   const lines = document.querySelectorAll(".view-line");
 
