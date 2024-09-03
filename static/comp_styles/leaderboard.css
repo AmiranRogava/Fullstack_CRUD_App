@@ -3,7 +3,7 @@ main {
   max-width: 1200px;
 
   height: fit-content;
-  background-color: #270046;
+  background-color: #2b0057;
   /* -webkit-box-shadow: 0px 5px 15px 8px #e4e7fb; */
   /* box-shadow: 0px 5px 15px 8px #e4e7fb; */
   display: flex;
@@ -20,7 +20,7 @@ main {
   padding: 2.5rem 2rem;
 }
 
-h1 {
+h2 {
   font-family: "Rubik", sans-serif;
   font-size: 1.7rem;
   color: #fff;
@@ -49,17 +49,17 @@ tr {
 
 
 tr:not(:first-child):hover {
-  background-color: #270046;
+  background-color: #2b0057;
   transform: scale(1.03);
   border: radius 1rem;
 
 }
 
 tr:nth-child(odd) {
-  background-color: #430377;
+  background-color: #4a02928a;
 }
 tr:not(:first-child):nth-child(odd):hover {
-  background-color: #430377;
+  background-color: #4a02928a;
 }
 
 .place {
@@ -95,8 +95,10 @@ td {
   font-weight: bold;
   font-size: 1.3rem;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
   align-items: center;
+  flex-direction: row-reverse;
+  gap: 20px;
 }
 
 .points:first-child {
@@ -111,7 +113,7 @@ td {
 .ribbon {
   width: calc(100% + 2rem) !important; /* Expand width by 2rem on both sides */
   height:85px; /* Expand height by 2rem (5rem + 2rem) */
-  background-color: #530693;
+  background-color: #5e03b9;
   position: absolute;
   left: -1rem; /* Center the ribbon */
   border-radius: 0.5rem;
@@ -119,12 +121,13 @@ td {
 }
 
 #leaderboard tr:not(:first-child):hover {
-  
-  /* background-color: #270046; */
   transform: scale(1.03);
+  width: 1100px;
+  background: transparent;  
+  z-index: 1;
 }
 #leaderboard tr:not(:first-child):hover td{
-  z-index: 2;
+  z-index: 4;
 
 }
 #leaderboard tr:not(:first-child):hover:has(.place, .points){
@@ -132,15 +135,15 @@ td {
 }
 #leaderboard tr:not(:first-child):hover:has(.place, .points)::after{
   content: "";
-  width: calc(100% + 2px);
+  width: calc(100% + 8px);
   display: block;
-  height: calc(100% + 2px);
-  /* background-color:  #270046 !important; */
+  height: calc(100% + 8px);
+  background-color:  #5e03b9 !important;
   position: absolute;
-  left: -1px;
-  top: -1px;
+  left: -4px;
+  top: -4px;
   border-radius: 0.5rem;
-  z-index: 1;
+  z-index: 3;
 }
 
 

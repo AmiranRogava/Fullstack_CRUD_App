@@ -10,7 +10,7 @@ html {
 }
 
 body {
-  background-color: #120d17;
+  background-color: #0f001e;
 }
 
 .hero-body {
@@ -23,15 +23,15 @@ section>div {
 }
 
 .blurple {
-  color: #5c5be5;
+  color: #5e03b9;
 }
 
 .bg-base {
-  background-color: #270046 !important;
+  background-color: #2b0057 !important;
 }
 
 /* .footer{
-  background-color: #120d17 !important;
+  background-color: #0f001e !important;
 
 } */
 .hero.is-fullheight {
@@ -48,7 +48,7 @@ section>div {
 
 #backtotop {
   display: inline-block;
-  background-color: #5c5be5;
+  background-color: #5e03b9 ;
   width: 50px;
   height: 50px;
   text-align: center;
@@ -64,15 +64,16 @@ section>div {
 
 #backtotop:hover {
   cursor: pointer;
-  background-color: #333;
+  background-color:  #5e03b9 !important;
+  opacity: 1 !important;
 }
 
 #backtotop:active {
-  background-color: #555;
+  opacity: 1 !important;
 }
 
 #backtotop.show {
-  opacity: 0.4;
+  opacity: 0.7;
   visibility: visible;
 }
 
@@ -98,10 +99,10 @@ section>div {
   height: 132px;
   position: fixed;
   z-index: 30;
-  background-color: #270046;
+  background-color: #2b0057;
 }
 .navi:has(nav.nav-w){
-  background-color: #120d17 !important;
+  background-color: #0f001e !important;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.1) !important;
 }
 #navbarBasicExample {
@@ -121,12 +122,12 @@ section>div {
 
 .navbar-item:hover {
   background-color: transparent !important;
-  color: #5c5be5 !important;
+  color: white !important;
 }
 
 .navbar-link:hover {
   background-color: transparent !important;
-  color: #5c5be5 !important;
+  color: white !important;
 }
 
 .navbar-menu {
@@ -163,7 +164,7 @@ section>div {
 
 nav,
 .navbar-menu {
-  background-color: #270046 !important;
+  background-color: #2b0057 !important;
 }
 
 .navbar-item.nav-dark,
@@ -177,11 +178,11 @@ nav,
 }
 
 nav.nav-w {
-  background-color: #120d17 !important;
+  background-color: #0f001e !important;
 }
 
 .nav-w {
-  background-color: #120d17 !important;
+  background-color: #0f001e !important;
   /* box-shadow: 100px 2px 10px rgba(0, 0, 0, 0.1) !important; */
 }
 
@@ -234,7 +235,7 @@ nav.nav-w {
 }
 
 .line.blurple {
-  background: #5c5be5;
+  background: #5e03b9;
 }
 
 .title.lined {
@@ -253,11 +254,27 @@ nav.nav-w {
 
 
 .button.is-blurple {
-  background-color: #a100c9;
+  background-color: #5e03b9 ;
   border-color: transparent;
   color: #fff;
+  transition: 0.4s;
+  border: none;
+}
+.button.is-blurple:hover{
+  transform: scale(1.05);
+ 
+}
+.button{
+  transition: 0.4s;
+  border: 1px solid #5e03b9  !important;
 }
 
+.button.is-primary:hover{
+  
+  border: none;
+  background-color: #5e03b9 !important;
+
+}
 .single-feature {
   position: relative;
   z-index: 5;
