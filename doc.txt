@@ -1,0 +1,6 @@
+  const levels = {
+    "amateur": 0,   // Assuming 0 as the starting point for "amateur"
+    "beginner": 13,
+    "junior": 50,
+    "master": 100
+  };
