@@ -69,10 +69,11 @@
         "email": "email@gmail.com",
         "img": "https://wallpapers-clan.com/wp-content/uploads/2023/05/cool-pfp-02.jpg",
         "password": "password",
-        "points": 2,
+        "points": 3,
         "finished_tasks": [
             "summing 6 ",
-            "summing 1"
+            "summing 1",
+            "Task 4"
         ],
         "age": "31",
         "bio": "Data analyst with a focus on data visualization."

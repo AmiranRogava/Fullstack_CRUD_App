@@ -1,7 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "IBM Plex Sans", Roboto, system-ui, sans-serif;
 
 }
 
@@ -293,8 +292,12 @@ nav.nav-w {
 .shape-right img {
   width: 100%;
 }
-
-@media (max-width: 767px) {
+@media screen and (max-width: 1024px) {
+  .navbar-item:nth-child(1) {
+    padding-left: 12px !important;
+}
+}
+@media screen and (max-width: 767px) {
   .hero.is-fullheight {
 
     max-height: 100vh;
@@ -330,14 +333,14 @@ nav.nav-w {
   width: 100%;
 }
 
-@media (max-width: 767px) {
+@media screen and (max-width: 767px) {
   .shape-left {
     display: none;
   }
 }
 
 
-@media screen and (min-width:1000px) {
+@media screen and (min-width:767px) {
   .baneri {
     height: 400px;
     margin-right: 0 !important;

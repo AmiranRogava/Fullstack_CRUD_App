@@ -185,7 +185,7 @@ function fetchTasks(language = "python") {
                 <div class="notiglow"></div>
                 <div class="notiborderglow"></div>
                 <div class="notititle">${task.name} </div>
-                <div class="notibody">${task.desc}</div>
+                <div class="notibody">${task.desc.length > 230 ? task.desc.split("<br>")[0].slice(0, 230) + '...' : task.desc.split("<br>")[0]}</div>
                 <div class="notibody " > ${ finished_tasks.includes(task.name) ? "<span>Done</span>" : `<i>points: ${task.reward}</i>`  }</div>
             </div>
             
