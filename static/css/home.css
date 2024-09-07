@@ -17,7 +17,7 @@ body {
 }
 
 section>div {
-  max-width: 1200px;
+  max-width: 1180px;
   margin: 0 auto;
 }
 
@@ -78,7 +78,7 @@ section>div {
 
 .navbar {
 
-  max-width: 1200px;
+  max-width: 1276px;
 
   margin: auto;
   align-items: center;
@@ -292,21 +292,6 @@ nav.nav-w {
 .shape-right img {
   width: 100%;
 }
-@media screen and (max-width: 1024px) {
-  .navbar-item:nth-child(1) {
-    padding-left: 12px !important;
-}
-}
-@media screen and (max-width: 767px) {
-  .hero.is-fullheight {
-
-    max-height: 100vh;
-  }
-
-  .shape-right {
-    display: none;
-  }
-}
 
 .navbar {
   padding-left: 0;
@@ -332,19 +317,78 @@ nav.nav-w {
 .shape-left img {
   width: 100%;
 }
+#cp-year{
+  font-size: 16px !important;
+}
+footer p{
+  font-size: 16px !important;
+}
+.baneri {
+  max-height: 400px;
+  margin-right: 0 !important;
+  filter: hue-rotate(388deg)
+}
+@media screen and (max-width: 1024px) {
+  .navbar-item:nth-child(1) {
+    padding-left: 12px !important;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .is-fixed-top{
+    padding: 0 48px;
+  }
+  
+}
+@media screen and (max-width: 768px) {
+  .hero.is-fullheight {
 
-@media screen and (max-width: 767px) {
+    max-height: 100vh;
+  }
+
+  .shape-right {
+    display: none;
+  }
   .shape-left {
     display: none;
   }
+  h1, h2, h3, span{
+    font-size: 28px !important;
+  }
+  p, a{
+    font-size: 18px !important;
+  }
+  strong{
+    font-size: 14px !important;
+  }
+  /* .intro > div {
+  display: flex;
+  flex-direction: column;
+  }
+  .baneri {
+    max-height: 450px !important;
+    align-items: left !important;
+  } */
+  
+  .single-feature:nth-child(odd) .columns {
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+  .image{
+    margin-left: 0 !important;
+  }
+  
 }
 
-
-@media screen and (min-width:767px) {
-  .baneri {
-    height: 400px;
-    margin-right: 0 !important;
-    filter: hue-rotate(388deg)
+@media screen and (max-width: 375px) {
+  h1, h2, h3, span{
+    font-size: 24px !important;
   }
-
+  p, a{
+    font-size: 16px !important;
+  }
+  strong{
+    font-size: 12px !important;
+  }
+  
+  
 }

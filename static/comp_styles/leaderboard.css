@@ -21,8 +21,7 @@ main {
 }
 
 h2 {
-  font-family: "Rubik", sans-serif;
-  font-size: 1.7rem;
+  font-size: 32px;
   color: #fff;
   text-transform: uppercase;
   cursor: default;
@@ -45,6 +44,7 @@ tr {
   transition: all 0.2s ease-in-out;
   border-radius: 0.2rem;
   height: fit-content;
+  max-height: 80px;
 }
 
 
@@ -71,29 +71,28 @@ tr:not(:first-child):nth-child(odd):hover {
 } */
 
 td {
-  height: 5rem;
+  max-height: 80px;
   font-family: "Rubik", sans-serif;
-  font-size: 1.4rem;
   padding: 1rem 2rem;
   position: relative;
 }
 
 .place {
   width: 1rem;
-  font-size: 2.2rem;
+  font-size: 36px;
   font-weight: bold;
   text-align: left;
 }
 
 .name {
   text-align: left;
-  font-size: 1.2rem;
+  font-size: 18px;
   vertical-align: middle;
 }
 
 .points {
   font-weight: bold;
-  font-size: 1.3rem;
+  font-size: 18px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -112,10 +111,10 @@ td {
 
 .ribbon {
   width: calc(100% + 2rem) !important; /* Expand width by 2rem on both sides */
-  height:85px; /* Expand height by 2rem (5rem + 2rem) */
+  height:86px;
   background-color: #5e03b9;
   position: absolute;
-  left: -1rem; /* Center the ribbon */
+  left: -1rem;
   border-radius: 0.5rem;
 
 }
@@ -147,3 +146,38 @@ td {
 }
 
 
+@media screen and (max-width: 768px) {
+
+  .place {
+    font-size: 32px;
+  }
+  
+  .name, .points {
+    font-size: 16px;
+  }
+  
+  .gold-medal {
+    height: 2rem;
+    margin-left: 1rem;
+  }
+  .ribbon {
+    height:80px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .place {
+    font-size: 28px;
+  }
+  
+  .name, .points {
+    font-size: 14px;
+  }
+  
+  .gold-medal {
+    height: 1rem;
+    margin-left: 1rem;
+  }
+  .ribbon {
+    height:80px;
+  }
+}
