@@ -12,7 +12,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 16px;
     --gradient: linear-gradient(to bottom, #aaff00, #77ff00, #44ff00);
-    --color: #44ff00
+    --color: #44ff00;
   }
   
   .notification:before {
@@ -28,6 +28,7 @@
     position: absolute;
     content: "";
     width: 0.25rem;
+    height: 110px;
     inset: 0.65rem auto 0.65rem 0.5rem;
     border-radius: 0.125rem;
     background: var(--gradient);
@@ -53,21 +54,34 @@
   }
   
   .notibody {
+    height: 45px;
     color: #99999d;
     padding: 0 1.25rem;
-    transition: transform 300ms ease;
+    transition: transform 300ms ease; /* Animate transform */
     z-index: 5;
+    position: relative;
+    
   }
   
-  .notification:hover .notibody {
-    transform: translateX(0.25rem)
-  }
+  .notibody:has(i), .notibody:has(span) {
+    transform: translateY(10px); /* Move down by 20px */
+    height: fit-content;
+    bottom:5px;
+
+}
+
+.notification:hover .notibody {
+    transform: translateX(0.25rem); /* Move right by 0.25rem */
+}
+.notification:hover .notibody:has(i), .notification:hover .notibody:has(span) {
+  transform: translate(0.25rem, 10px); /* Move right by 0.25rem */
+}
   
   .notiglow,
   .notiborderglow {
     position: absolute;
     width: 20rem;
-    height: 20rem;
+    height: 21rem;
     transform: translate(-50%, -50%);
     background: radial-gradient(circle closest-side at center, white, transparent);
     opacity: 0;

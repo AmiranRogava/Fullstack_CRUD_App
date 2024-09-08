@@ -71,7 +71,7 @@ tr:not(:first-child):nth-child(odd):hover {
 } */
 
 td {
-  max-height: 80px;
+  height: 80px;
   font-family: "Rubik", sans-serif;
   padding: 1rem 2rem;
   position: relative;
@@ -163,6 +163,8 @@ td {
   .ribbon {
     height:80px;
   }
+  
+  
 }
 @media screen and (max-width: 375px) {
   .place {
@@ -180,4 +182,6 @@ td {
   .ribbon {
     height:80px;
   }
+  
+  
 }

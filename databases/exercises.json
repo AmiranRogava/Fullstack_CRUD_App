@@ -4,7 +4,7 @@
             "langs": ["python","cpp"],
             "name": "Task 1",
             "reward": 1,
-            "desc": "write sum of two numbers function ab(1,2)->3",
+            "desc": "დაწერე ფუნქცია რომელის ორ რიცხვს იღებს, როგორც არგუმენტს და აბრუნებს მათ ჯამს. \nab(1,2)->3",
             "tests":{
                 "ab(3,4)":7,
                 "ab(3,1)":4
@@ -14,16 +14,57 @@
             "langs": ["python","cpp"],
             "name": "Task 2",
             "reward": 1,
-            "desc": "Write a function that takes a number as an argument, increments it by 1, and returns the result.<br>addition(0) ➞ 1",
+            "desc": "დაწერე ფუნქცია რომელიც იღებს რიცხვს, როგორც არგუმენტს, ზრდის 1-ით და აბრუნებს შედეგს.\naddition(0) ➞ 1",
             "tests":{
-                "addition(0)":1,"addition(9)": 10
+                "addition(0)":1,
+                "addition(9)": 10
+            }
+        },
+        {
+            "langs": ["python","cpp"],
+            "name": "Task 3",
+            "reward": 1,
+            "desc": "დაწერე ფუნქცია რომელიც იღებს რიცხვს და გადაყავს წამებში.\nconvert(5) ➞ 300",
+            "tests":{
+                "convert(5)":300,
+                "convert(3)": 180
+            }
+        },
+        {
+            "langs": ["python","cpp"],
+            "name": "Task 4",
+            "reward": 2,
+            "desc": "შექმენით ფუნქცია, რომელიც არგუმენტად იღებს ასაკს წლებში და აბრუნებს ასაკს დღეებში.\ncalc_age(65) ➞ 23725",
+            "tests":{
+                "calc_age(65)":23725,
+                "calc_age(20)": 7300
+            }
+        },
+        {
+            "langs": ["python","cpp"],
+            "name": "Task 5",
+            "reward": 2,
+            "desc": "შექმენით ფუნქცია,რომელიც მიიღებს სტრინგს და დააბრუნებს, როგორც ინტეჯერს.\nstring_int('6') ➞ 6",
+            "tests":{
+                "string_int('6')":6,
+                "string_int('15')": 15
+            }
+        },
+        {
+            "langs": ["python","cpp"],
+            "name": "Task 6",
+            "reward": 2,
+            "desc": "შექმენით ფუნქცია რომელიც იღებს სიგრძეს (length)და სიგანეს (width) და ითვლის მართკუთხედის პერიმეტრს.\nfind_perimeter(6, 7) ➞ 26",
+            "tests":{
+                "find_perimeter(6, 7)":26,
+                "find_perimeter(10, 20)": 60
             }
         },
         {
             "langs": ["python","javascript"],
-            "name": "Task 3",
-            "reward": 1,
-            "desc": "Create a function that takes as arguments the number of wins, draws, and losses. The function should calculate the total points that a football team has accumulated. win - 3, draws - 1, losses -0. <br>football_points(3, 4, 2) ➞ 13"
+            "name": "Task 7",
+            "reward": 3,
+            "desc": "შექმენით ფუნქცია რომელიც იღებს არგუმენტად მოგებებს (wins), ფრეს (draws) და წაგებებს (losses). ფუნქციამ უნდა დაითვალოს ქულების ოდენობა, რომელიც ფეხბურთის გუნდმა დააგროვა.\nwin - 3, draws - 1, losses -0. \nfootball_points(3, 4, 2) ➞ 13"
             ,
             "tests":{
                 "football_points(3, 4, 2)":13,
@@ -33,9 +74,9 @@
         },
         {
             "langs": ["python","javascript"],
-            "name": "Task 4 ",
-            "reward": 2,
-            "desc": "Write a function that returns the largest number from a list. Do not use the max() function.<br> find_highest([-1, 3, 5, 6, 99, 12, 2]) ➞ 99",
+            "name": "Task 8 ",
+            "reward": 3,
+            "desc": "დაწერეთ ფუნქცია, რომელიც დააბრუნებს სიიდან ყველაზე დიდ რიცხვს. \nარ გამოიყენოთ max() ფუნქცია \nfind_highest([-1, 3, 5, 6, 99, 12, 2]) ➞ 99",
             "tests":{
                 "find_highest([-1, 3, 5, 6, 99, 12, 2])":99,
                 "find_highest([0, 12, 4, 87])":87
@@ -43,18 +84,19 @@
         },
         {
            "langs": ["python","javascript"],
-           "name": "Task 5",
-           "reward": 1,
-           "desc": "Write a function that takes a number and returns the number incremented by one, but without using mathematical operators.<br> increment(4) ➞ 5",
+           "name": "Task 9",
+           "reward": 3,
+           "desc": "დაწერეთ ფუნქცია, რომელიც სტრინგიდან ამოიღებს : დან : მდე ტექსტს.\ntrim_string('aasdkmsalkmd:123:0asdasdj')->'123'",
            "tests":{
-               "increment(4)":5,"increment(-10)":-9
+               "trim_string('aasdkmsalkmd:123:0asdasdj')":"123",
+               "trim_string(':asdasdasd:asd3245')":"asdasdasd"
            }
        },
        {
           "langs": ["python","javascript"],
-          "name": "Task 6",
-          "reward": 1,
-          "desc": "Write a function that shows how persistent a number is.<br> persistence(39) ➞ 3   # 3 * 9 = 27, 2 * 7 = 14, 1 * 4 = 4 ",
+          "name": "Task 10",
+          "reward": 5,
+          "desc": "დაწერე ფუნქცია,რომელიც გვიჩვენებს რამდენად მდგრადია რიცხვი.\npersistence(39) ➞ 3   # 3 * 9 = 27, 2 * 7 = 14, 1 * 4 = 4 ",
           "tests":{
               "persistence(39)": 3,
               "persistence(999)": 4

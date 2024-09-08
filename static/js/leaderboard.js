@@ -36,7 +36,7 @@ async function loadLeaderboard() {
             // Create and populate the name cell
             const nameCell = document.createElement('td');
             nameCell.className = 'name';
-            nameCell.textContent = `${user.first_name} ${user.last_name}`;
+            nameCell.textContent = `${user.first_name}`;
             
             // Create and populate the points cell
             const pointsCell = document.createElement('td');

@@ -1,5 +1,5 @@
-def increment(a):
-    return sum([a,1])
-print(increment(-10))
+def trim_string(text):
+    return text.split(":")[1]
+print(trim_string(':asdasdasd:asd3245'))
 
-print(increment(4))
+print(trim_string('aasdkmsalkmd:123:0asdasdj'))
