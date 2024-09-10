@@ -284,8 +284,11 @@
             <p class="subtitle mt-3 has-text-gray">
                 Join CrystalCode today and start unlocking your coding potential by registering down below!
             </p>
-            <a href="register" class="button is-blurple is-medium"><strong><i class="fa-solid fa-book"></i> Get
-                    Started</strong></a>
+            <div style="display: flex; gap: 10px;">
+
+                <a href="register" class="button is-blurple is-medium"><strong><i class="fa-solid fa-book"></i> Get Started</strong></a>
+                <a href="{{ url_for('static', filename='instruction.pdf') }}" class="button is-blurple is-medium" target="_blank" download><strong>Download instruction</strong></a>
+            </div>
         </div>
 
     </div>
@@ -308,6 +311,8 @@
         <p>
             &copy; <span id="cp-year"></span> Copyright All Rights Reserved.
         </p>
+
+
     </div>
 </footer>
 <!-- Footer Section End -->

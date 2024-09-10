@@ -349,3 +349,63 @@ div#container {
     display: block;
     color: rgb(68, 255, 0) !important;
 }
+.screen-message {
+    display: none;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 2px solid #f5c6cb;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5rem; 
+    font-weight: bold;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
+    border-radius: 8px;
+    animation: shake 0.5s ease-in-out 3; 
+    max-width: 80%; /
+}
+
+.screen-message p {
+    margin: 0; /* Remove default margin from the <p> tag */
+}
+
+/* Optional: Add a shake animation for even more impact */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+@media only screen and (max-width: 1024px) {
+    header,
+    .container {
+        display: none;
+    }
+    html, body {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .screen-message {
+        display: block;
+        text-align: center;
+        font-size: 1.5rem;
+        
+    }
+}
+@media only screen and (max-width: 767px) {
+    
+    .screen-message {
+        font-size: 20px;
+       
+    }
+}
+@media only screen and (max-width: 375px) {
+    
+    .screen-message {
+        font-size: 1rem;
+       
+    }
+}

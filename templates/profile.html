@@ -21,14 +21,11 @@
         <label for="value-3">CPP</label>
     </div>
     <a href="/" class="ui-btn" style="text-decoration: none;">
-        <span>
-           Home
-        </span>
+        <span>Home</span>
     </a>
-
 </header>
-<div class="container">
 
+<div class="container">
     <div class="content">
         <div class="tasks">
             <div class="notification task">
@@ -38,15 +35,19 @@
                 <div class="notibody">Contribute to Open Source UI Elements</div>
             </div>
         </div>
-       
-
     </div>
 
     <div class="profile">
         <p>Loading profile...</p>
     </div>
-
 </div>
+
+<!-- Message for small screens -->
+<div class="screen-message">
+    <p>This site can't be used on smaller devices. Please use a laptop or desktop <br>⚠️⚠️⚠️</p>
+</div>
+
+
 
 <script src="{{ url_for('static', filename='js/ajax.js') }}"></script>
 <script src="{{ url_for('static', filename='js/profile.js') }}"></script>
