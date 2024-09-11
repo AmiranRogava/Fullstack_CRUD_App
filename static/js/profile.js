@@ -28,6 +28,7 @@ var themes = [
 ];
 
 document.addEventListener("DOMContentLoaded", () => {
+    redirect()
     auth()
     langChange();
     fetchTasks();
@@ -524,4 +525,18 @@ function submit() {
     });
 }
 
+function redirect() {
+  const screenMessage = document.querySelector('.screen-message');
 
+  // Check if the screen message is displayed (i.e., on small screens)
+  if (window.innerWidth <= 1024) {
+    // Show the message and redirect to the home screen after 5 seconds
+    screenMessage.style.display = 'block';
+    
+    setTimeout(function() {
+      window.location.href = '/'; // Redirect to the home page
+    }, 5000); // Redirect after 5 seconds
+  }
+}
+
+// Now you can call this function wherever needed
