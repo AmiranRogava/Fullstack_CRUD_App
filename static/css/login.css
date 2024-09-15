@@ -1,14 +1,14 @@
 .login {
     width: 460px;
-    background-color: rgba(0, 0, 0, 0.51);
+    background-color: #2b0057;
     display: flex;
     flex-direction: column;
     border-radius: 25px;
     padding: 60px 30px;
     margin: 0px auto;
     margin-top: 50px;
-
-
+    gap: 30px;
+    
 }
 
 .login h2 {
@@ -19,12 +19,13 @@
     font-weight: 500;
     padding-left: 16px;
     padding-right: 16px;
-    margin-bottom: 32px;
+    /* margin-bottom: 32px; */
 }
 
 .login>div {
     display: flex;
     flex-direction: column;
+    
 }
 
 .login>div>label {
@@ -42,7 +43,7 @@
 .login>div>input {
     height: 44px;
     padding: 12px;
-    background-color: #212121;
+    background-color: #5e03b9;
     border: none;
     border-radius: 8px;
     outline: none;
@@ -63,25 +64,24 @@
     font-size: 14px;
     line-height: 20px;
     color: #eff6ff;
-    background-color: #212121;
+    background-color: #5e03b9;
     padding: 16px;
-    border: 2px solid #2c2c2e;
+    border: 2px solid #5e03b9;
     border-radius: 8px;
-    margin-top: 24px;
+    /* margin-top: 24px; */
     transition: 0.6s;
 
 }
 
 .login button:active {
     background-color: #eff6ff;
-    color: #212121;
+    color: #5e03b9;
 
 }
 
 .login>div:nth-last-child(1) {
-    margin-top: 24px;
+    /* margin-top: 24px; */
     background-color: transparent;
-    gap: 30px;
 }
 
 .login>div>a {
@@ -94,7 +94,9 @@
     line-height: 16px;
     letter-spacing: 0.4px;
 }
-
+.res{
+    display: none;
+}
 .res.success {
     font-size: 14px;
     line-height: 20px;
@@ -104,7 +106,6 @@
     border: 2px solid #2c2c2e;
     border-radius: 8px;
     text-transform: uppercase;
-    margin-top: 24px;
 }
 
 
@@ -117,5 +118,8 @@
     border: 2px solid #2c2c2e;
     border-radius: 8px;
     text-transform: uppercase;
-    margin-top: 24px;
+}
+.resreg{
+    display: flex;
+    gap: 20px;
 }

@@ -6,6 +6,6 @@
   };
 
 
-  background: #0f001e
+background: #0f001e
 light: #5e03b9
 decor: #2b0057;

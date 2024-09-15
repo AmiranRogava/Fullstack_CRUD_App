@@ -2,7 +2,7 @@
     "exercises": [
         {
             "langs": ["python","cpp"],
-            "name": "Task 1",
+            "name": "summing",
             "reward": 1,
             "desc": "დაწერე ფუნქცია რომელის ორ რიცხვს იღებს, როგორც არგუმენტს და აბრუნებს მათ ჯამს. \nab(1,2)->3",
             "tests":{
@@ -12,7 +12,7 @@
         },
         {
             "langs": ["python","cpp"],
-            "name": "Task 2",
+            "name": "addition",
             "reward": 1,
             "desc": "დაწერე ფუნქცია რომელიც იღებს რიცხვს, როგორც არგუმენტს, ზრდის 1-ით და აბრუნებს შედეგს.\naddition(0) ➞ 1",
             "tests":{
@@ -22,7 +22,7 @@
         },
         {
             "langs": ["python","cpp"],
-            "name": "Task 3",
+            "name": "convert",
             "reward": 1,
             "desc": "დაწერე ფუნქცია რომელიც იღებს რიცხვს და გადაყავს წამებში.\nconvert(5) ➞ 300",
             "tests":{
@@ -32,7 +32,7 @@
         },
         {
             "langs": ["python","cpp"],
-            "name": "Task 4",
+            "name": "calculate age",
             "reward": 2,
             "desc": "შექმენით ფუნქცია, რომელიც არგუმენტად იღებს ასაკს წლებში და აბრუნებს ასაკს დღეებში.\ncalc_age(65) ➞ 23725",
             "tests":{
@@ -41,8 +41,8 @@
             }
         },
         {
-            "langs": ["python","cpp"],
-            "name": "Task 5",
+            "langs": ["python","cpp","javascript"],
+            "name": "string to integer",
             "reward": 2,
             "desc": "შექმენით ფუნქცია,რომელიც მიიღებს სტრინგს და დააბრუნებს, როგორც ინტეჯერს.\nstring_int('6') ➞ 6",
             "tests":{
@@ -51,8 +51,8 @@
             }
         },
         {
-            "langs": ["python","cpp"],
-            "name": "Task 6",
+            "langs": ["python","cpp","javascript"],
+            "name": "find perimeter",
             "reward": 2,
             "desc": "შექმენით ფუნქცია რომელიც იღებს სიგრძეს (length)და სიგანეს (width) და ითვლის მართკუთხედის პერიმეტრს.\nfind_perimeter(6, 7) ➞ 26",
             "tests":{
@@ -62,7 +62,7 @@
         },
         {
             "langs": ["python","javascript"],
-            "name": "Task 7",
+            "name": "football points",
             "reward": 3,
             "desc": "შექმენით ფუნქცია რომელიც იღებს არგუმენტად მოგებებს (wins), ფრეს (draws) და წაგებებს (losses). ფუნქციამ უნდა დაითვალოს ქულების ოდენობა, რომელიც ფეხბურთის გუნდმა დააგროვა.\nwin - 3, draws - 1, losses -0. \nfootball_points(3, 4, 2) ➞ 13"
             ,
@@ -74,7 +74,7 @@
         },
         {
             "langs": ["python","javascript"],
-            "name": "Task 8 ",
+            "name": "find highest",
             "reward": 3,
             "desc": "დაწერეთ ფუნქცია, რომელიც დააბრუნებს სიიდან ყველაზე დიდ რიცხვს. \nარ გამოიყენოთ max() ფუნქცია \nfind_highest([-1, 3, 5, 6, 99, 12, 2]) ➞ 99",
             "tests":{
@@ -84,7 +84,7 @@
         },
         {
            "langs": ["python","javascript"],
-           "name": "Task 9",
+           "name": "trim string",
            "reward": 3,
            "desc": "დაწერეთ ფუნქცია, რომელიც სტრინგიდან ამოიღებს : დან : მდე ტექსტს.\ntrim_string('aasdkmsalkmd:123:0asdasdj')->'123'",
            "tests":{
@@ -94,8 +94,8 @@
        },
        {
           "langs": ["python","javascript"],
-          "name": "Task 10",
-          "reward": 5,
+          "name": "persistence",
+          "reward": 3,
           "desc": "დაწერე ფუნქცია,რომელიც გვიჩვენებს რამდენად მდგრადია რიცხვი.\npersistence(39) ➞ 3   # 3 * 9 = 27, 2 * 7 = 14, 1 * 4 = 4 ",
           "tests":{
               "persistence(39)": 3,

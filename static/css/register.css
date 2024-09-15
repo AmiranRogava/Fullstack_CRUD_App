@@ -1,6 +1,6 @@
 .register{
     width: 460px;    
-    background-color: rgba(0, 0, 0, 0.51);    
+    background-color: #2b0057;    
     display: flex;
     flex-direction: column;
     border-radius: 25px;
@@ -42,7 +42,7 @@
 .register > div > div > input{
     height: 44px;
     padding: 12px;
-    background-color: #212121;
+    background-color: #5e03b9;
     border: none;
     border-radius: 8px;
     outline: none;
@@ -58,9 +58,9 @@
     font-size:14px;
     line-height: 20px;
     color: #eff6ff;
-    background-color: #212121;
+    background-color: #5e03b9;
     padding: 16px;
-    border: 2px solid #2c2c2e;
+    border: 2px solid #5e03b9;
     border-radius: 8px;
     text-transform: uppercase;
     margin-top: 24px;
@@ -69,7 +69,7 @@
 }
 .register button:active{
     background-color: #eff6ff;
-    color: #212121;
+    color: #5e03b9;
 
 }
 .register > a{

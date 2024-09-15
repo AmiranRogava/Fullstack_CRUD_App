@@ -77,12 +77,10 @@ function auth() {
                 <img src="${user.img}" alt="Profile Picture">
                 <h2>${user.username}</h2>
                 <div>
-                  <p>Full Name: ${user.first_name} ${user.last_name}</p>
+                  
                   <p class="allPoints">Points: ${user.points || "0"}</p>
-                  <p class="level">Level: ${userLevel}</p> <!-- Added level here -->
-                  <p>Email: ${user.email}</p>
-                  <p>Age: ${user.age || "Not specified"}</p>
-                  <p class="bio">Bio: ${user.bio || "No bio provided"}</p>
+                  <p>${userLevel}</p> <!-- Added level here -->
+                  <p>${user.email}</p>
                 
                   <br>
                   <button type="button" class="edit ui-btn"><span>Edit Profile</span></button>

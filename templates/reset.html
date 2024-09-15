@@ -6,7 +6,6 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
 
 <div class="reset">
-    <img src="{{ url_for('static', filename='src/node.png') }}" alt="Hosting">
     <h2>Request Password Reset</h2>
     <div>
         <label for="email">email</label>
@@ -14,6 +13,6 @@
         <p>Enter your account email address to receive instructions on resetting your password.</p>
     </div>
     <button>send email</button>
-    <a href="/">return to login</a>
+    <a href="/login">return to login</a>
 </div>
 {% endblock %}

@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: #23182c;
+    background-color: #0f001e;
     font-family: "IBM Plex Sans", Roboto, system-ui, sans-serif;
 }
 
@@ -21,5 +21,5 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #4a4a4a;
+    background-color: #0f001e;
 }

@@ -10,7 +10,7 @@
 
 }
 .lang-selector .selected {
-  background-color: #333333;
+  background-color: #5e03b9;
   padding: 5px;
   margin-bottom: 3px;
   border-radius: 5px;
@@ -36,7 +36,7 @@
   flex-direction: column;
   border-radius: 5px;
   padding: 5px;
-  background-color: #333333;
+  background-color: #5e03b9;
   position: relative;
   top: -100px;
   opacity: 0;
@@ -53,12 +53,13 @@
   border-radius: 5px;
   padding: 5px;
   transition: 300ms;
-  background-color: #333333;
+  background-color: #5e03b9;
   width: 150px;
   font-size: 15px;
 }
 .lang-selector .option:hover {
-  background-color: #4d4d4f;
+  background-color: #5803ad;
+  cursor: pointer;
 }
 .lang-selector .options input[type="checkbox"] {
   display: none;

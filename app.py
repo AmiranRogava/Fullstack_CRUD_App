@@ -11,6 +11,9 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('home.html')
+@app.route('/instruction')
+def instruction():
+    return render_template('instruction.html')
 
 @app.route('/get_users')
 def get_users():

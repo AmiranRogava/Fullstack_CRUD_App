@@ -1,0 +1,41 @@
+html {
+    background: linear-gradient(135deg, #0f001e,#2b0057);
+}
+body{
+    background-color: transparent !important;
+}
+
+strong{
+    font-family: "times new roman";
+    color:#5e03b9;
+}
+h1,h2{
+    font-family: "times new roman";
+    color: #b5b5b5;
+    
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+p{
+    font-family: "times new roman";
+    color: #b5b5b5;
+    margin: 16px 0;
+
+}
+#content{
+    width: fit-content;
+    max-width: 1200px;
+
+    margin: auto;
+}
+.ui-btn{
+    margin: 20px 0;
+    background-color: #5e03b9 !important;
+    width: 100px !important;
+}

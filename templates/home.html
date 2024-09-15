@@ -56,7 +56,7 @@
                     Stats
                 </a>
 
-                <a href="#" class="navbar-item is-tab">
+                <a href="/instruction" class="navbar-item is-tab">
                     Docs
                 </a>
             </div>
@@ -126,88 +126,6 @@
     </path>
 </svg>
 <!-- Hero Waves End -->
-
-<!-- heading -->
-<section id="features" class="section mt-6">
-    <div class="has-text-centered">
-        <h2 class="title lined">Features</h2>
-        <div class="line line-center blurple"></div>
-    </div>
-
-    <!-- single feature 1 start (Left) -->
-    <div class="single-feature">
-        <div class="columns mt-6">
-            <div class="column mr-6">
-                <h3 class="title"><span class="blurple">#1</span> Switch Task by Language</h3>
-                <p class="subtitle mt-3">
-                    Quickly switch between coding tasks tailored for Python, JavaScript, or C++. Choose your language and dive into challenges designed to fit your skill level. With clear instructions and point rewards, the interface keeps everything accessible, letting you focus on honing the skills that matter most.
-                </p>
-            </div>
-            <div class="column" data-aos="fade-left">
-                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features1.gif') }}"
-                    alt="feature1 img" />
-            </div>
-        </div>
-    </div>
-    <!-- single feature 1 end (Left) -->
-
-    <!-- single feature 2 start (Right) -->
-    <div class="single-feature">
-        <div class="columns mt-6">
-            <div class="column" data-aos="fade-right">
-                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features2.gif') }}"
-                    alt="feature1 img" />
-            </div>
-            <div class="column">
-                <h3 class="title">
-                    <span class="has-text-primary">#2</span> Effortless Task Selection
-                </h3>
-                <p class="subtitle mt-3">
-                    Pick a task and jump straight into the editor with a single click. Whether you're switching tasks or languages, the intuitive interface allows you to navigate seamlessly, ensuring a smooth and engaging coding experience without any interruptions to your workflow.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- single feature 2 end (Right) -->
-
-    <!-- single feature 3 start (Left) -->
-    <div class="single-feature">
-        <div class="columns mt-6">
-            <div class="column mr-6">
-                <h3 class="title"><span class="has-text-warning">#3</span>
-                    Customizable Coding Environment
-                </h3>
-                <p class="subtitle mt-3">
-                    Switch between Python, JavaScript, or C++ directly in the editor, and easily select your favorite theme to suit your coding style. Create a personalized environment that keeps you focused and motivated while working through tasks, ensuring a smooth and distraction-free experience.
-                </p>
-            </div>
-            <div class="column" data-aos="fade-left">
-                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features3.gif') }}"
-                    alt="feature1 img" />
-            </div>
-        </div>
-    </div>
-    <!-- single feature 3 end (Left) -->
-
-    <!-- single feature 4 start (Right) -->
-    <div class="single-feature">
-        <div class="columns mt-6">
-            <div class="column" data-aos="fade-right">
-                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features4.gif') }}"
-                    alt="feature1 img" />
-            </div>
-            <div class="column">
-                <h3 class="title"><span class="has-text-info">#4</span> Task Execution and Progress Tracking</h3>
-                <p class="subtitle mt-3">
-                    Run your code, test your solution, and submit it—all within the editor. Earn points for completed tasks and track your progress as you level up your skills. Each completed task brings you closer to mastering the language, while providing clear feedback to help you improve.
-                </p>
-            </div>
-        </div>
-    </div>
-    <!-- single feature 4 end (Right) -->
-</section>
-<!-- Features Section End -->
-
 <!-- Stats Section Start -->
 <section id="stats" class="section mt-6">
     <div class="has-text-centered">
@@ -233,7 +151,7 @@
     </div>
 </section>
 <!-- Stats Section End -->
-<!-- Stats Section Start -->
+<!-- leaderboard Section Start -->
 <section id="leaderboard" class="section mt-6" style="display: flex; justify-content: center;">
     <main>
         <div id="header">
@@ -273,16 +191,98 @@
         </div>
     </main>
 </section>
-<!-- Stats Section End -->
+<!-- Stats leaderboard End -->
+<!-- features -->
+<section id="features" class="section mt-6">
+    <div class="has-text-centered">
+        <h2 class="title lined">Features</h2>
+        <div class="line line-center blurple"></div>
+    </div>
+
+    <!-- single feature 1 start (Left) -->
+    <div class="single-feature">
+        <div class="columns mt-6">
+            <div class="column mr-6">
+                <h3 class="title"><span class="blurple">#1</span> Switch Task by Language</h3>
+                <p class="subtitle mt-3">
+                    Quickly switch between coding tasks tailored for Python, JavaScript, or C++. Choose your language and dive into challenges designed to fit your skill level. With clear instructions and point rewards, the interface keeps everything accessible, letting you focus on honing the skills that matter most.
+                </p>
+            </div>
+            <div class="column" data-aos="fade-left">
+                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features1.gif') }}"
+                    alt="feature1 img" />
+            </div>
+        </div>
+    </div>
+    <!-- single feature 1 end (Left) -->
+
+    <!-- single feature 2 start (Right) -->
+    <div class="single-feature">
+        <div class="columns mt-6">
+            <div class="column" data-aos="fade-right">
+                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features2.gif') }}"
+                    alt="feature1 img" />
+            </div>
+            <div class="column">
+                <h3 class="title">
+                    <span class="blurple">#2</span> Effortless Task Selection
+                </h3>
+                <p class="subtitle mt-3">
+                    Pick a task and jump straight into the editor with a single click. Whether you're switching tasks or languages, the intuitive interface allows you to navigate seamlessly, ensuring a smooth and engaging coding experience without any interruptions to your workflow.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- single feature 2 end (Right) -->
+
+    <!-- single feature 3 start (Left) -->
+    <div class="single-feature">
+        <div class="columns mt-6">
+            <div class="column mr-6">
+                <h3 class="title"><span class="blurple">#3</span>
+                    Customizable Coding Environment
+                </h3>
+                <p class="subtitle mt-3">
+                    Switch between Python, JavaScript, or C++ directly in the editor, and easily select your favorite theme to suit your coding style. Create a personalized environment that keeps you focused and motivated while working through tasks, ensuring a smooth and distraction-free experience.
+                </p>
+            </div>
+            <div class="column" data-aos="fade-left">
+                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features3.gif') }}"
+                    alt="feature1 img" />
+            </div>
+        </div>
+    </div>
+    <!-- single feature 3 end (Left) -->
+
+    <!-- single feature 4 start (Right) -->
+    <div class="single-feature">
+        <div class="columns mt-6">
+            <div class="column" data-aos="fade-right">
+                <img class="image has-image-centered" src="{{ url_for('static', filename='src/features4.gif') }}"
+                    alt="feature1 img" />
+            </div>
+            <div class="column">
+                <h3 class="title"><span class="blurple">#4</span> Task Execution and Progress Tracking</h3>
+                <p class="subtitle mt-3">
+                    Run your code, test your solution, and submit it—all within the editor. Earn points for completed tasks and track your progress as you level up your skills. Each completed task brings you closer to mastering the language, while providing clear feedback to help you improve.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- single feature 4 end (Right) -->
+</section>
+<!-- Features Section End -->
+
+
 <!-- Invite Section Start -->
-<section class="section mt-6">
+<section id="invite" class="section mt-6">
     <div class="columns" style="margin:auto">
         <div class="column has-text-left">
             <h2 class="title has-text-weight-bold">
-                Ready to try our website?
+                Ready to elevate your coding skills?
             </h2>
             <p class="subtitle mt-3 has-text-gray">
-                Join CrystalCode today and start unlocking your coding potential by registering down below!
+                Join CrystalCode today and unlock new challenges, projects, and opportunities to enhance your coding expertise!
             </p>
             <div style="display: flex; gap: 10px;">
 

@@ -354,10 +354,10 @@ footer p{
   h1, h2, h3, span{
     font-size: 28px !important;
   }
-  p, a{
+  a{
     font-size: 18px !important;
   }
-  strong{
+  strong, p{
     font-size: 14px !important;
   }
   /* .intro > div {
@@ -383,10 +383,10 @@ footer p{
   h1, h2, h3, span{
     font-size: 24px !important;
   }
-  p, a{
+  a{
     font-size: 16px !important;
   }
-  strong{
+  strong, p{
     font-size: 12px !important;
   }
   
