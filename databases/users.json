@@ -8,7 +8,7 @@
         "password": "gela",
         "points": 1,
         "finished_tasks": [
-            "summing 1"
+
         ],
         "age": "",
         "bio": "Rooby-doo"
@@ -60,9 +60,7 @@
         "password": "password",
         "points": 3,
         "finished_tasks": [
-            "summing 6 ",
-            "summing 1",
-            "Task 4"
+            
         ],
         "age": "31",
         "bio": "Data analyst with a focus on data visualization."

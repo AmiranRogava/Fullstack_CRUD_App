@@ -122,7 +122,7 @@ header {
     padding: 10px;
     margin-bottom: 10px;
     border: 2px solid #2c2c2e;
-    background-color: #212121;
+    background-color: #0f001e;
     color: #ededed;
     border-radius: 4px;
     font-size: 12px;
@@ -262,7 +262,7 @@ div#container {
 }
 
 .run-button:hover {
-    background-color: #353536;
+    background-color: #7402e6;
 }
 
 .back-button {
@@ -271,7 +271,7 @@ div#container {
 }
 
 .back-button:hover {
-    background-color: #353536;
+    background-color: #7402e6;
 }
 
 .overflowingContentWidgets {

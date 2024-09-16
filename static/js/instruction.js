@@ -71,15 +71,6 @@ const result = md.render(markdownString);
 const contentDiv = document.getElementById('content');
 contentDiv.innerHTML = result;
 
-// Append the "Home" button
-const homeButton = document.createElement('a');
-homeButton.href = "/";
-homeButton.className = "ui-btn";
-homeButton.style.textDecoration = "none";
-homeButton.innerHTML = '<span>Home</span>';
-
-contentDiv.appendChild(homeButton);
-
 // Apply Highlight.js to the rendered content
 document.querySelectorAll('pre code').forEach((el) => {
     hljs.highlightElement(el);
