@@ -328,12 +328,12 @@ div#container {
 }
 
 .done .notititle {
-    color: #ff7500;
+    color: #91BEFA;
 
 }
 
 .notibody span {
-    color: #ff7500;
+    color: #91BEFA;
     text-transform: capitalize;
     display: block;
 }
@@ -342,7 +342,7 @@ div#container {
     font-style: normal;
     text-transform: capitalize;
     display: block;
-    color: rgb(68, 255, 0) !important;
+    color: #91BEFA !important;
 }
 .screen-message {
     display: none;
